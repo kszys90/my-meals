@@ -9,19 +9,24 @@ export const NavBar = () => {
         height: '8vh'
       }}
     >
-      <Typography>
-        MyMeals
-      </Typography>
-      <NavLink
-        to={'/'}
+      <Box>
+        <Typography>
+          MyMeals
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-around'
+        }}
       >
-        Home
-      </NavLink>
-      <NavLink
-        to={'/search'}
-      >
-        Search
-      </NavLink>
+        <NavLink
+          to={'/'}
+        >
+          Home
+        </NavLink>
+
+      </Box>
     </Box>
   )
 }

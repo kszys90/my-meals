@@ -4,11 +4,10 @@ import NavBar from './components/NavBar'
 import { Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
 // import { Button } from '@mui/material'
-import theme from './theme'
-import Search from './components/Search'
+// import theme from './theme'
+import SearchResults from './components/SearchResults'
 
 function App() {
-  console.log(theme.palette)
   // {
   //   backgroundColor: theme.palette.secondary.main, height: '50vh'
 
@@ -25,8 +24,8 @@ function App() {
           element={<Home />}
         />
         <Route
-          path={'/search'}
-          element={<Search />}
+          path={'/search/:searchPhrase'}
+          element={<SearchResults />}
         />
 
       </Routes>
