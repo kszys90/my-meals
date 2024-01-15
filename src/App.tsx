@@ -1,15 +1,18 @@
 import React from 'react'
 import { Box } from '@mui/material'
 import NavBar from './components/NavBar'
-import { Routes, Route } from 'react-router-dom'
-import Home from './components/Home'
+import { Routes, Route, useParams, useNavigate } from 'react-router-dom'
+import Home from './pages/Home'
 // import { Button } from '@mui/material'
 // import theme from './theme'
-import SearchResults from './components/SearchResults'
+import SearchResults from './pages/SearchResults'
 
 function App() {
   // {
   //   backgroundColor: theme.palette.secondary.main, height: '50vh'
+  // const [searchVal, setSearchVal] = useState('')
+  const { searchPhrase } = useParams()
+  const navigate = useNavigate()
 
   return (
     <Box
@@ -21,7 +24,10 @@ function App() {
       <Routes>
         <Route
           path={'/'}
-          element={<Home />}
+          element={<Home
+            value={searchPhrase || ''}
+            onChange={(event: any) => navigate(event.target.value.replaceAll('/', ''))}
+          />}
         />
         <Route
           path={'/search/:searchPhrase'}
