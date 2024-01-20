@@ -1,6 +1,6 @@
 import request from './request'
 
-const SIGN_IN_URL = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyA4abJoFocrbBp7np-AyoIqz8tAhDI1DJQ'
+const SIGN_IN_URL = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyA4abJoFocrbBp7np-AyoIqz8tAhDI1DJQ'
 
 export const signIn = (email: string, password: string) => {
   return request(SIGN_IN_URL, {

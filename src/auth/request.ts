@@ -2,13 +2,11 @@
 export const request = (url: string, options: RequestInit) => {
   return fetch(url, options)
     .then(resp => {
-      if (!resp.ok) {
-        throw resp
-      }
       return resp.json()
-    })
-    .catch(error => {
-      throw error.json()
+        .then(data => {
+          if (!resp.ok) { throw data }
+          return data
+        })
     })
 }
 
