@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom'
 // import theme from './theme'
 import SearchResults from './pages/SearchResults'
 import LogIn from './pages/LogIn'
+import RegisterPage from './pages/Register'
 
 function App() {
   // {
@@ -26,6 +27,10 @@ function App() {
         <Route
           path={'/'}
           element={<LogIn />}
+        />
+        <Route
+          path={'/register'}
+          element={<RegisterPage />}
         />
         {/* <Route
           path={'/'}

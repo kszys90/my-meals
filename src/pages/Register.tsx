@@ -1,20 +1,22 @@
 import React from 'react'
-import { signIn } from '../auth'
-import { NavLink } from 'react-router-dom'
+import { signUp } from '../auth'
 
-export const LogIn = (props: any) => {
+export const RegisterPage = (props: any) => {
   const {
     ...otherProps
   } = props
 
   const [login, setLogin] = React.useState<string>('')
   const [password, setPassword] = React.useState<string>('')
+  const [password2, setPassword2] = React.useState<string>('')
 
-  const handleLogin = () => {
-    signIn(login, password)
-      .then(data => console.log(data))
+  const handleClick = () => {
+    password === password2 ?
+      signUp(login, password)
+        .then(data => console.log(data))
+      :
+      console.log('PASSWORDS ARE NOT THE SAME')
   }
-
   return (
     <div
       {...otherProps}
@@ -42,19 +44,25 @@ export const LogIn = (props: any) => {
         </input>
       </label>
       <br />
+      <label htmlFor={'passInput2'}>
+        <span>Password</span>
+        <input
+          name={'passInput2'}
+          type={'password'}
+          onChange={e => setPassword2(e.target.value)}
+          value={password2}
+        >
+        </input>
+      </label>
+      <br />
+
       <button
-        onClick={handleLogin}
+        onClick={handleClick}
       >
         LOG IN
       </button>
-      <br />
-      <NavLink
-        to={'/register'}
-      >
-        SIGN IN
-      </NavLink>
     </div>
   )
 }
 
-export default LogIn
+export default RegisterPage
