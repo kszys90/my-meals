@@ -1,5 +1,6 @@
 import React from 'react'
 import { signUp } from '../auth'
+import { getToken } from '../auth/token'
 
 export const RegisterPage = (props: any) => {
   const {
@@ -13,7 +14,7 @@ export const RegisterPage = (props: any) => {
   const handleClick = () => {
     password === password2 ?
       signUp(login, password)
-        .then(data => console.log(data))
+        .then(() => console.log(getToken()))
       :
       console.log('PASSWORDS ARE NOT THE SAME')
   }

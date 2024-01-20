@@ -1,6 +1,7 @@
 import React from 'react'
 import { signIn } from '../auth'
 import { NavLink } from 'react-router-dom'
+import { getToken } from '../auth/token'
 
 export const LogIn = (props: any) => {
   const {
@@ -12,7 +13,7 @@ export const LogIn = (props: any) => {
 
   const handleLogin = () => {
     signIn(login, password)
-      .then(data => console.log(data))
+      .then(() => console.log(getToken()))
   }
 
   return (
@@ -51,7 +52,7 @@ export const LogIn = (props: any) => {
       <NavLink
         to={'/register'}
       >
-        SIGN IN
+        SIGN UP
       </NavLink>
     </div>
   )
