@@ -1,7 +1,7 @@
 import React from 'react'
-import { signIn } from '../auth'
+import { signIn, getToken } from '../auth'
 import { NavLink } from 'react-router-dom'
-import { getToken } from '../auth/token'
+import Loader from '../components/Loader'
 
 export const LogIn = (props: any) => {
   const {
@@ -13,13 +13,16 @@ export const LogIn = (props: any) => {
 
   const handleLogin = () => {
     signIn(login, password)
-      .then(() => console.log(getToken()))
+      .then(() => {
+        console.log('getToken:', getToken())
+      })
   }
 
   return (
     <div
       {...otherProps}
     >
+      <Loader />
       <label htmlFor={'loginInput'}>
         <span>Login</span>
         <input
