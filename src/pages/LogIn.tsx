@@ -1,65 +1,51 @@
 import React from 'react'
-import { signIn, getToken } from '../auth'
-import { NavLink } from 'react-router-dom'
+import { Box, Grid, Container } from '@mui/material'
+
 // import Loader from '../components/Loader'
 import CookiesAlert from '../components/CookiesAlert'
+import LoginForm from '../components/LoginForm'
+import LoginInfo from '../components/LoginInfo'
 
-export const LogIn = (props: any) => {
-  const {
-    ...otherProps
-  } = props
-
-  const [login, setLogin] = React.useState<string>('')
-  const [password, setPassword] = React.useState<string>('')
-
-  const handleLogin = () => {
-    signIn(login, password)
-      .then(() => {
-        console.log('getToken:', getToken())
-      })
-  }
-
+export const LogIn = () => {
   return (
-    <div
-      {...otherProps}
+    <Container
+      maxWidth={'md'}
     >
-      <CookiesAlert />
-      {/* <Loader /> */}
-      <label htmlFor={'loginInput'}>
-        <span>Login</span>
-        <input
-          name={'loginInput'}
-          type={'email'}
-          onChange={e => setLogin(e.target.value)}
-          value={login}
+      <Box
+        sx={{
+          flexGrow: 1
+        }}
+      >
+        <Grid
+          container
+          spacing={{ xs: 0, md: 2 }}
         >
-        </input>
-      </label>
-      <br />
-      <label htmlFor={'passInput'}>
-        <span>Password</span>
-        <input
-          name={'passInput'}
-          type={'password'}
-          onChange={e => setPassword(e.target.value)}
-          value={password}
+          <Grid
+            item
+            xs={12}
+            md={6}
+            sx={{
+              // display: { xs: 'none', sm: 'block' }
+              backgroundColor: 'lightblue'
+            }}
+          >
+            <LoginInfo />
 
-        >
-        </input>
-      </label>
-      <br />
-      <button
-        onClick={handleLogin}
-      >
-        LOG IN
-      </button>
-      <br />
-      <NavLink
-        to={'/register'}
-      >
-        SIGN UP
-      </NavLink>
-    </div>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            md={6}
+          >
+            <LoginForm />
+          </Grid>
+        </Grid>
+        {/* <Loader /> */}
+
+      </Box >
+      < CookiesAlert />
+
+    </Container>
   )
 }
 
