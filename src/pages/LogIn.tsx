@@ -1,7 +1,8 @@
 import React from 'react'
 import { signIn, getToken } from '../auth'
 import { NavLink } from 'react-router-dom'
-import Loader from '../components/Loader'
+// import Loader from '../components/Loader'
+import CookiesAlert from '../components/CookiesAlert'
 
 export const LogIn = (props: any) => {
   const {
@@ -22,7 +23,8 @@ export const LogIn = (props: any) => {
     <div
       {...otherProps}
     >
-      <Loader />
+      <CookiesAlert />
+      {/* <Loader /> */}
       <label htmlFor={'loginInput'}>
         <span>Login</span>
         <input

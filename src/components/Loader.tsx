@@ -1,4 +1,4 @@
-import { Box, CircularProgress } from '@mui/material'
+import { Box, CircularProgress, Typography } from '@mui/material'
 import React from 'react'
 
 export const Loader = () => {
@@ -17,7 +17,22 @@ export const Loader = () => {
         backgroundColor: 'rgba(255,255,255, 0.75)'
       }}
     >
-      <CircularProgress />
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          textAlign: 'center'
+        }}
+      >
+        <Box>
+          <CircularProgress />
+        </Box>
+        <Box>
+          <Typography variant={'h4'}>
+            Loading...
+          </Typography>
+        </Box>
+      </Box>
     </Box >
   )
 }
