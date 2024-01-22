@@ -1,51 +1,37 @@
 import React from 'react'
-import { Box, Grid, Container } from '@mui/material'
-
+import { Box, Container } from '@mui/material'
 // import Loader from '../components/Loader'
 import CookiesAlert from '../components/CookiesAlert'
-import LoginForm from '../components/LoginForm'
-import LoginInfo from '../components/LoginInfo'
+import LoginCard from '../components/LoginCard'
 
 export const LogIn = () => {
   return (
-    <Container
-      maxWidth={'md'}
+    <Box
+      sx={{
+        minHeight: '95vh',
+        minWidth: '100vw'
+      }}
     >
-      <Box
+
+      <Container
+        maxWidth={'xs'}
         sx={{
-          flexGrow: 1
+          display: 'flex',
+          minHeight: '95vh',
+          justifyContent: 'center',
+          alignItems: 'center'
         }}
       >
-        <Grid
-          container
-          spacing={{ xs: 0, md: 2 }}
+        <Box
+          sx={{
+            flexGrow: 1
+          }}
         >
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              // display: { xs: 'none', sm: 'block' }
-              backgroundColor: 'lightblue'
-            }}
-          >
-            <LoginInfo />
-
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            md={6}
-          >
-            <LoginForm />
-          </Grid>
-        </Grid>
-        {/* <Loader /> */}
-
-      </Box >
-      < CookiesAlert />
-
-    </Container>
+          <LoginCard />
+        </Box>
+        < CookiesAlert />
+      </Container >
+    </Box>
   )
 }
 

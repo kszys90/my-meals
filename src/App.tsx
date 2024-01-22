@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box } from '@mui/material'
-import NavBar from './components/NavBar'
+// import NavBar from './components/NavBar'
 import { Routes, Route } from 'react-router-dom'
 // import Home from './pages/Home'
 // import { Button } from '@mui/material'
@@ -8,6 +8,7 @@ import { Routes, Route } from 'react-router-dom'
 import SearchResults from './pages/SearchResults'
 import LogIn from './pages/LogIn'
 import RegisterPage from './pages/Register'
+import Footer from './components/Footer'
 
 function App() {
   // {
@@ -22,7 +23,7 @@ function App() {
         minHeight: '100vh'
       }}
     >
-      <NavBar />
+      {/* <NavBar /> */}
       <Routes>
         <Route
           path={'/'}
@@ -45,6 +46,7 @@ function App() {
         />
 
       </Routes>
+      <Footer />
     </Box>
   )
 }
