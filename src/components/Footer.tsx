@@ -16,7 +16,7 @@ export const Footer = () => {
         bottom: 0
       }}
     >
-      WEB CREATED BY KSZYS90.......
+      CREATED BY KRZYŚ
     </Box>
   )
 }

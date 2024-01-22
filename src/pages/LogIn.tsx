@@ -16,15 +16,16 @@ export const LogIn = () => {
       <Container
         maxWidth={'xs'}
         sx={{
-          display: 'flex',
-          minHeight: '90vh',
-          justifyContent: 'center',
-          alignItems: 'center'
+          minHeight: '90vh'
         }}
       >
         <Box
           sx={{
-            flexGrow: 1
+            minHeight: '80vh',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center'
           }}
         >
           <LoginCard />

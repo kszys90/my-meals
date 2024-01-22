@@ -1,12 +1,12 @@
 import React from 'react'
 // import { getToken, signIn } from '../auth'
 import { NavLink } from 'react-router-dom'
-import { Box, Grow, Paper, Typography } from '@mui/material'
+import { Box, Grow, Paper, Typography, Button, TextField } from '@mui/material'
 import theme from '../theme'
 
 export const LoginCard = () => {
-  // const [login, setLogin] = React.useState<string>('')
-  // const [password, setPassword] = React.useState<string>('')
+  const [login, setLogin] = React.useState<string>('')
+  const [password, setPassword] = React.useState<string>('')
 
   // const handleLogin = () => {
   //   signIn(login, password)
@@ -14,12 +14,19 @@ export const LoginCard = () => {
   //       console.log('getToken:', getToken())
   //     })
   // }
-  console.log(theme)
+  const handleSubmit = (e: React.SyntheticEvent) => {
+    e.preventDefault()
+    console.log('submit')
+    // signIn(login, password)
+    // .then(() => {
+    //   console.log('getToken:', getToken())
+    // })
+  }
   return (
     <>
       <Box
         sx={{
-          minHeight: '30vh',
+          minHeight: '25vh',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
@@ -50,7 +57,7 @@ export const LoginCard = () => {
             variant={'h3'}
             sx={{
               fontWeight: 550,
-              fontSize: { xs: '2.5 rem', md: '3.5rem' },
+              fontSize: { xs: '2 rem', sm: '3.5rem' },
               color: theme.palette.primary.main
             }}
           >
@@ -67,30 +74,101 @@ export const LoginCard = () => {
         <Paper
           elevation={20}
           sx={{
-            minHeight: '55vh',
+            minHeight: '60vh',
             backgroundColor: theme.palette.grey[100],
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center'
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            borderRadius: '15px',
+            width: { xs: '85%', sm: '100%' }
           }}
         >
-          <Typography
-            variant={'h5'}
+          <Box
+            component={'form'}
+            onSubmit={(e) => handleSubmit(e)}
             sx={{
-              fontWeight: 550,
-              color: theme.palette.primary.main
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              alignItems: 'center'
             }}
           >
-            Login
-          </Typography>
-          <NavLink
-            to={'/register'}
+            <Typography
+              variant={'h5'}
+              sx={{
+                fontWeight: 550,
+                color: theme.palette.primary.main,
+                fontSize: { xs: '1.6rem', sm: '2.0rem' },
+                paddingTop: { xs: '16px', sm: '48px' },
+                paddingBottom: { xs: '8px', sm: '24px' }
+              }}
+            >
+              Login
+            </Typography>
+            <TextField
+              id={'email-input'}
+              label={'E-mail'}
+              type={'email'}
+              variant={'standard'}
+              size={'small'}
+              autoFocus
+              value={login}
+              onChange={e => setLogin(e.target.value)}
+              sx={{
+                paddingBottom: '8px',
+                fontSize: '5px'
+              }}
+            />
+            <TextField
+              id={'password-input'}
+              label={'Password'}
+              type={'password'}
+              variant={'standard'}
+              size={'small'}
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              sx={{
+                paddingBottom: '24px'
+              }}
+            />
+            <Button
+              variant={'contained'}
+              type={'submit'}
+            >
+              LOG IN
+            </Button>
+            <Box sx={{ paddingTop: { xs: '16px', sm: '48px' } }}>
+              <Button variant={'text'}>
+                Continue as Guest
+              </Button>
+            </Box>
+
+          </Box>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center'
+            }}
           >
-            SIGN UP
-          </NavLink>
+            <Typography variant={'subtitle2'}>
+              or Sign Up using
+            </Typography>
+            <NavLink
+              to={'/register'}
+              style={{
+                paddingBottom: '16px',
+                color: 'black',
+                textDecoration: 'none',
+                textAlign: 'center'
+              }}
+            >
+              <Button variant={'text'}>SIGN UP</Button>
+            </NavLink>
+          </Box>
         </Paper>
-      </Grow>
+      </Grow >
     </>
   )
 }
