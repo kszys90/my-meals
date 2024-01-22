@@ -1,7 +1,7 @@
 import React from 'react'
 // import { getToken, signIn } from '../auth'
 import { NavLink } from 'react-router-dom'
-import { Box, Typography } from '@mui/material'
+import { Box, Grow, Paper, Typography } from '@mui/material'
 import theme from '../theme'
 
 export const LoginCard = () => {
@@ -19,43 +19,78 @@ export const LoginCard = () => {
     <>
       <Box
         sx={{
-          height: '30vh',
+          minHeight: '30vh',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center'
         }}
       >
-        <Typography
-          variant={'h3'}
-          sx={{
-            fontWeight: 550
-          }}
+        <Grow
+          style={{ transformOrigin: '0 0 0' }}
+          in={true}
+          timeout={1000}
         >
-          Welcome to
-        </Typography>
-        <Typography
-          variant={'h3'}
-          sx={{
-            fontWeight: 550,
-            color: theme.palette.primary.main
-          }}
+          <Typography
+            variant={'h3'}
+            sx={{
+              fontWeight: 550,
+              fontSize: '2rem'
+            }}
+          >
+            Welcome to
+          </Typography>
+        </Grow>
+        <Grow
+          style={{ transformOrigin: '0 0 0' }}
+          in={true}
+          timeout={1000}
         >
-          MyMeals
-        </Typography>
-      </Box>
-      <Box
-        sx={{
-          height: '50vh'
-        }}
-      >
+          <Typography
+            variant={'h3'}
+            sx={{
+              fontWeight: 550,
+              fontSize: { xs: '2.5 rem', md: '3.5rem' },
+              color: theme.palette.primary.main
+            }}
+          >
+            MyMeals
+          </Typography>
+        </Grow>
 
-        <NavLink
-          to={'/register'}
-        >
-          SIGN UP
-        </NavLink>
       </Box>
+      <Grow
+        style={{ transformOrigin: '0 0 0' }}
+        in={true}
+        timeout={3000}
+      >
+        <Paper
+          elevation={20}
+          sx={{
+            minHeight: '55vh',
+            backgroundColor: theme.palette.grey[100],
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <Typography
+            variant={'h5'}
+            sx={{
+              fontWeight: 550,
+              color: theme.palette.primary.main
+            }}
+          >
+            Login
+          </Typography>
+          <NavLink
+            to={'/register'}
+          >
+            SIGN UP
+          </NavLink>
+        </Paper>
+      </Grow>
     </>
   )
 }

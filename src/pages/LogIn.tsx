@@ -8,7 +8,7 @@ export const LogIn = () => {
   return (
     <Box
       sx={{
-        minHeight: '95vh',
+        minHeight: '90vh',
         minWidth: '100vw'
       }}
     >
@@ -17,7 +17,7 @@ export const LogIn = () => {
         maxWidth={'xs'}
         sx={{
           display: 'flex',
-          minHeight: '95vh',
+          minHeight: '90vh',
           justifyContent: 'center',
           alignItems: 'center'
         }}

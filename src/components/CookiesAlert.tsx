@@ -29,7 +29,7 @@ export const CookiesAlert = () => {
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
         open={open}
         onClose={handleClose}
-        autoHideDuration={2500}
+        autoHideDuration={2000}
         action={action}
       />
     </>
