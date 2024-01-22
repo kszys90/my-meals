@@ -26,7 +26,7 @@ export const LoginCard = () => {
     <>
       <Box
         sx={{
-          minHeight: '25vh',
+          minHeight: { xs: '25vh', sm: '20vh' },
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
