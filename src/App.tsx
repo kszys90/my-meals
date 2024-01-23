@@ -9,6 +9,7 @@ import SearchResults from './pages/SearchResults'
 import LogIn from './pages/LogIn'
 import RegisterPage from './pages/Register'
 import Footer from './components/Footer'
+import Home from './pages/Home'
 
 function App() {
   // {
@@ -33,20 +34,17 @@ function App() {
       {/* <NavBar /> */}
       <Routes>
         <Route
-          path={'/'}
+          path={'/sign-in'}
           element={<LogIn />}
         />
         <Route
-          path={'/register'}
+          path={'/sign-up'}
           element={<RegisterPage />}
         />
-        {/* <Route
+        <Route
           path={'/'}
-          element={<Home
-            value={searchPhrase || ''}
-            onChange={(event: any) => console.log(searchPhrase)}
-          />}
-        /> */}
+          element={<Home />}
+        />
         <Route
           path={'/search/:searchPhrase'}
           element={<SearchResults />}

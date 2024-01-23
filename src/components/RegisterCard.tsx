@@ -160,7 +160,7 @@ export const RegisterCard = () => {
             }}
           >
             <NavLink
-              to={'/'}
+              to={'/sign-in'}
               style={{
                 paddingBottom: '16px',
                 color: 'black',

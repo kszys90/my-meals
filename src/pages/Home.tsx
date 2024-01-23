@@ -1,16 +1,29 @@
 import React from 'react'
-import { Box, TextField } from '@mui/material'
+import { Box } from '@mui/material'
+import SliderComponent from '../components/SliderComponent'
+import CustomSlider from '../components/CustomSlider'
+
 export const Home = (props: any) => {
-  const { value, onChange } = props
+  const meal = () => {
+    return (
+      <SliderComponent />)
+  }
+  const meals = [meal, meal, meal, meal, meal, meal, meal, meal, meal, meal]
+
   return (
-    <Box >
-      <TextField
-        id={'outlined-basic'}
-        label={'Outlined'}
-        variant={'outlined'}
-        value={value}
-        onChange={onChange}
-      />
+    <Box
+      sx={{
+        height: '90vh',
+        width: '100vw'
+      }}
+    >
+      <Box
+        sx={{
+          height: { xs: '40vh', sm: '30vh' }
+        }}
+      >
+        <CustomSlider items={meals} />
+      </Box>
     </Box>
   )
 }

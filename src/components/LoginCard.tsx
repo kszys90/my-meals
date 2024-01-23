@@ -156,7 +156,7 @@ export const LoginCard = () => {
               or Sign Up using
             </Typography>
             <NavLink
-              to={'/register'}
+              to={'/sign-up'}
               style={{
                 paddingBottom: '16px',
                 color: 'black',
