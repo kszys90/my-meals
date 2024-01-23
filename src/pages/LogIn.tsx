@@ -1,7 +1,6 @@
 import React from 'react'
 import { Box, Container } from '@mui/material'
 // import Loader from '../components/Loader'
-import CookiesAlert from '../components/CookiesAlert'
 import LoginCard from '../components/LoginCard'
 
 export const LogIn = () => {
@@ -30,7 +29,6 @@ export const LogIn = () => {
         >
           <LoginCard />
         </Box>
-        < CookiesAlert />
       </Container >
     </Box>
   )

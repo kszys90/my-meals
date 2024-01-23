@@ -1,68 +1,39 @@
 import React from 'react'
-import { signUp } from '../auth'
-import { getToken } from '../auth/token'
+// import { signUp } from '../auth'
+// import { getToken } from '../auth/token'
+import { Box, Container } from '@mui/material'
+import RegisterCard from '../components/RegisterCard'
 
-export const RegisterPage = (props: any) => {
-  const {
-    ...otherProps
-  } = props
-
-  const [login, setLogin] = React.useState<string>('')
-  const [password, setPassword] = React.useState<string>('')
-  const [password2, setPassword2] = React.useState<string>('')
-
-  const handleClick = () => {
-    password === password2 ?
-      signUp(login, password)
-        .then(() => console.log(getToken()))
-      :
-      console.log('PASSWORDS ARE NOT THE SAME')
-  }
+export const RegisterPage = () => {
   return (
-    <div
-      {...otherProps}
+
+    <Box
+      sx={{
+        minHeight: '90vh',
+        minWidth: '100vw'
+      }}
     >
-      <label htmlFor={'loginInput'}>
-        <span>Login</span>
-        <input
-          name={'loginInput'}
-          type={'email'}
-          onChange={e => setLogin(e.target.value)}
-          value={login}
-        >
-        </input>
-      </label>
-      <br />
-      <label htmlFor={'passInput'}>
-        <span>Password</span>
-        <input
-          name={'passInput'}
-          type={'password'}
-          onChange={e => setPassword(e.target.value)}
-          value={password}
 
-        >
-        </input>
-      </label>
-      <br />
-      <label htmlFor={'passInput2'}>
-        <span>Password</span>
-        <input
-          name={'passInput2'}
-          type={'password'}
-          onChange={e => setPassword2(e.target.value)}
-          value={password2}
-        >
-        </input>
-      </label>
-      <br />
-
-      <button
-        onClick={handleClick}
+      <Container
+        maxWidth={'xs'}
+        sx={{
+          minHeight: '90vh'
+        }}
       >
-        LOG IN
-      </button>
-    </div>
+        <Box
+          sx={{
+            minHeight: '80vh',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+        >
+          <RegisterCard />
+        </Box>
+      </Container >
+    </Box>
+
   )
 }
 
