@@ -28,7 +28,7 @@ export const CarouselItem = (props: CarouselItemProps) => {
         loading={'lazy'}
         style={{
           maxWidth: '100%',
-          aspectRatio: '16/9',
+          objectFit: 'cover',
           padding: '.25rem',
           height: '100%'
         }}
