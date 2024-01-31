@@ -1,16 +1,14 @@
 import { Box } from '@mui/material'
 import React from 'react'
-import { Navigation, Scrollbar } from 'swiper/modules'
+import { Navigation, Scrollbar, Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/scrollbar'
-import CarouselItem from './CarouselItem'
-// import calcBreakpoints from './calcBreakpoints'
+import 'swiper/css/autoplay'
+import HeadCarouselItem from './HeadCarouselItem'
 
-// eslint-disable-next-line no-unused-vars
-
-export const Carousel = () => {
+export const HeadCarousel = () => {
   return (
     <>
       <Box
@@ -23,21 +21,33 @@ export const Carousel = () => {
         }}
       >
         <Swiper
-          modules={[Navigation, Scrollbar]}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false
+          }}
+          modules={[Autoplay, Navigation, Scrollbar]}
           grabCursor={true}
           loop={true}
           navigation
           scrollbar={{ draggable: true }}
           breakpoints={{
             0: {
+              slidesPerView: 1,
+              spaceBetween: 1
+            },
+            550: {
               slidesPerView: 2,
               spaceBetween: 1
             },
-            640: {
+            650: {
               slidesPerView: 3,
               spaceBetween: 1
             },
-            1024: {
+            1000: {
+              slidesPerView: 4,
+              spaceBetween: 1
+            },
+            1500: {
               slidesPerView: 5,
               spaceBetween: 1
             }
@@ -49,7 +59,7 @@ export const Carousel = () => {
               <SwiperSlide
                 key={item.img}
               >
-                <CarouselItem
+                <HeadCarouselItem
                   item={item}
                   key={item.img}
                 />
@@ -62,7 +72,7 @@ export const Carousel = () => {
   )
 }
 
-export default Carousel
+export default HeadCarousel
 
 const itemData = [
   {
