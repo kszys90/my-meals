@@ -11,9 +11,7 @@ export const Footer = () => {
         height: '5vh',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center',
-        position: 'sticky',
-        bottom: 0
+        alignItems: 'center'
       }}
     >
       CREATED BY KRZYŚ

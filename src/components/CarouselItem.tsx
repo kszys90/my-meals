@@ -1,5 +1,6 @@
 import { Box } from '@mui/material'
 import React from 'react'
+// import theme from '../theme'
 
 interface CarouselImage {
   img: string,
@@ -16,10 +17,9 @@ export const CarouselItem = (props: CarouselItemProps) => {
     <Box
       key={item.img}
       sx={{
+        width: '100%',
         height: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
+        backgroundColor: 'lightgrey'
       }}
     >
       <img
@@ -27,12 +27,12 @@ export const CarouselItem = (props: CarouselItemProps) => {
         alt={item.title}
         loading={'lazy'}
         style={{
-          maxWidth: '100%',
-          objectFit: 'cover',
-          padding: '.25rem',
-          height: '100%'
+          width: '100%',
+          height: '100%',
+          objectFit: 'contain'
         }}
       />
+
     </Box >
   )
 }

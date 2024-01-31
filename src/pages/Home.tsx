@@ -6,21 +6,49 @@ export const Home = (props: any) => {
   return (
     <Box
       sx={{
-        height: '90vh',
+        height: '100vh',
         width: '100vw'
+
       }}
     >
-      <Typography variant={'h1'}>My Meals</Typography>
       <Box
         sx={{
-          height: { xs: '25vh', sm: '20vh' },
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          maxWidth: '2000px'
+          height: '5vh',
+          backgroundColor: 'black'
         }}
       >
-        <Carousel />
+
+      </Box>
+
+      <Box>
+        <Box
+          sx={{
+            height: '30vh',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignContent: 'center',
+            textAlign: 'center'
+          }}
+        >
+          <Typography
+            variant={'h1'}
+            sx={{ fontSize: '60px' }}
+          >My Meals
+          </Typography>
+          <Typography variant={'h5'}>Best recipes...</Typography>
+        </Box>
+        <Box
+          sx={{
+            height: { xs: '30vh', sm: '30vh' },
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            maxWidth: '2000px'
+          }}
+        >
+          <Carousel />
+        </Box>
       </Box>
       <Box
         sx={{
@@ -29,18 +57,6 @@ export const Home = (props: any) => {
       >
 
       </Box>
-      <Box
-        sx={{
-          height: { xs: '25vh', sm: '20vh' },
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          maxWidth: '2000px'
-        }}
-      >
-        <Carousel />
-      </Box>
-
     </Box>
   )
 }
