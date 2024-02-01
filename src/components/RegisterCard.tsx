@@ -1,7 +1,6 @@
 import { Box, Button, Grow, Paper, TextField, Typography } from '@mui/material'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import theme from '../theme'
 import { getToken, signUp } from '../auth'
 
 export const RegisterCard = () => {
@@ -39,7 +38,7 @@ export const RegisterCard = () => {
             sx={{
               fontWeight: 550,
               fontSize: { xs: '2 rem', sm: '3.5rem' },
-              color: theme.palette.primary.main
+              color: theme => theme.palette.primary.main
             }}
           >
             MyMeals
@@ -71,7 +70,7 @@ export const RegisterCard = () => {
           elevation={20}
           sx={{
             minHeight: '60vh',
-            backgroundColor: theme.palette.grey[100],
+            backgroundColor: theme => theme.palette.grey[100],
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
@@ -95,7 +94,7 @@ export const RegisterCard = () => {
               variant={'h5'}
               sx={{
                 fontWeight: 550,
-                color: theme.palette.primary.main,
+                color: theme => theme.palette.primary.main,
                 fontSize: { xs: '1.6rem', sm: '2.0rem' },
                 paddingTop: { xs: '16px', sm: '48px' },
                 paddingBottom: { xs: '8px', sm: '24px' }

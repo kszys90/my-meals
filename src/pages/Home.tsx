@@ -2,24 +2,21 @@ import React from 'react'
 import { Box, Typography, Zoom, Button } from '@mui/material'
 import ArrowDropDownCircleIcon from '@mui/icons-material/ArrowDropDownCircle'
 import HeadCarousel from '../components/HeadCarousel'
-import theme from '../theme'
+import SecondaryCarousel from '../components/SecondaryCarousel'
 
 export const Home = (props: any) => {
   return (
     <Box
       sx={{
-        height: '100vh',
+        minHeight: '100vh',
         width: '100vw'
-
       }}
     >
       <Box
         sx={{
-          height: '5vh',
-          backgroundColor: 'black'
+          height: '5vh'
         }}
       >
-
       </Box>
 
       <Box
@@ -44,7 +41,7 @@ export const Home = (props: any) => {
               justifyContent: 'center',
               alignContent: 'center',
               textAlign: 'center',
-              color: theme.palette.primary.dark
+              color: (theme) => theme.palette.primary.dark
             }}
           >
             <Typography
@@ -71,7 +68,9 @@ export const Home = (props: any) => {
               alignItems: 'center',
               paddingBottom: '20px',
               paddingTop: '10px',
-              backgroundColor: '#F0F0F0'
+              backgroundColor: theme => theme.palette.background.paper,
+              boxShadow: 15
+
             }}
           >
             <HeadCarousel />
@@ -98,6 +97,47 @@ export const Home = (props: any) => {
               }}
             />
           </Button>
+        </Box>
+      </Zoom>
+
+      <Zoom
+        in={true}
+        style={{ transitionDelay: '500ms' }}
+      >
+        <Box
+          sx={{
+            height: { xs: '22vh', xl: '14vh' },
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            paddingBottom: '20px',
+            paddingTop: '20px',
+            marginTop: '50px'
+          }}
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'left',
+              alignItems: 'center',
+              width: '100%',
+              maxWidth: '1200px',
+              height: '20%',
+              paddingBottom: '10px',
+              paddingTop: '10px'
+            }}
+          >
+            <Typography
+              variant={'h6'}
+              sx={{
+                paddingLeft: '25px'
+              }}
+            >
+              Category name
+            </Typography>
+          </Box>
+          <SecondaryCarousel />
         </Box>
       </Zoom>
     </Box >

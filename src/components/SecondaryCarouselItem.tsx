@@ -1,4 +1,4 @@
-import { Box, Typography, Button } from '@mui/material'
+import { Box } from '@mui/material'
 import React from 'react'
 
 interface CarouselImage {
@@ -12,6 +12,9 @@ interface CarouselItemProps {
 
 export const HeadCarouselItem = (props: CarouselItemProps) => {
   const { item } = props
+  const imgHover = (bool: boolean) => {
+    bool ? console.log('enter') : console.log('left')
+  }
   return (
     <Box
       key={item.img}
@@ -24,32 +27,16 @@ export const HeadCarouselItem = (props: CarouselItemProps) => {
     >
       <Box
         sx={{
-          minHeight: '15%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}
-      >
-        <Typography
-          variant={'subtitle1'}
-          sx={{
-            textAlign: 'center',
-            fontSize: { xs: '22px', xl: '25px' }
-          }}
-        >
-          Meal category
-        </Typography>
-      </Box>
-      <Box
-        sx={{
           width: '100%',
-          height: '65%'
+          height: '80%'
         }}
       >
         <img
           src={item.img}
           alt={item.title}
           loading={'lazy'}
+          onMouseEnter={() => imgHover(true)}
+          onMouseLeave={() => imgHover(false)}
           style={{
             width: '100%',
             height: '100%',
@@ -57,19 +44,6 @@ export const HeadCarouselItem = (props: CarouselItemProps) => {
           }}
         />
       </Box >
-      <Box
-        sx={{
-          minHeight: '20%',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}
-      >
-        <Button variant={'contained'}>
-          Show more
-        </Button>
-
-      </Box>
     </Box >
   )
 }
