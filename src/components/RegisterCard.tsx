@@ -70,7 +70,7 @@ export const RegisterCard = () => {
           elevation={20}
           sx={{
             minHeight: '60vh',
-            backgroundColor: theme => theme.palette.grey[100],
+            backgroundColor: theme => theme.palette.secondary.main,
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',

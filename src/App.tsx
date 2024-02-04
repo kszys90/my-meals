@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeProvider, Box, createTheme, IconButton, Button, Typography } from '@mui/material'
+import { ThemeProvider, Box, createTheme, IconButton } from '@mui/material'
 import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
 import createThemes from './themes/CreateThemes'
@@ -13,7 +13,7 @@ import Home from './pages/Home'
 const ColorModeContext = React.createContext({ toggleColorMode: () => { } })
 
 function App() {
-  const [mode, setMode] = React.useState<'light' | 'dark'>('dark')
+  const [mode, setMode] = React.useState<'light' | 'dark'>('light')
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
@@ -30,28 +30,25 @@ function App() {
           sx={{
             minHeight: '100vh',
             height: '100%',
-            backgroundColor: (theme) => theme.palette.background.default
+            backgroundColor: (theme) => theme.palette.background.default,
+            overflow: 'hidden'
           }}
         >
           <Box
             sx={{
               height: '5vh',
               display: 'flex',
-              justifyContent: 'space-between',
               alignItems: 'center'
             }}
           >
-            <Button variant={'text'}>
-              <Typography
-                sx={{ fontWeight: 900 }}
-              >
-                MyMeals
-              </Typography>
-            </Button>
             <IconButton
-              sx={{ marginLeft: 2 }}
               onClick={colorMode.toggleColorMode}
-              color={'inherit'}
+              sx={{
+                color: (theme) => theme.palette.primary.dark,
+                position: 'fixed',
+                right: 0,
+                zIndex: 4
+              }}
             >
               {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
             </IconButton>

@@ -1,6 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, Button } from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
 
 export const NavBar = () => {
   return (
@@ -9,24 +9,14 @@ export const NavBar = () => {
         height: '8vh'
       }}
     >
-      <Box>
-        <Typography>
+      <Button variant={'text'}>
+        <MenuIcon />
+        <Typography
+          sx={{ fontWeight: 900 }}
+        >
           MyMeals
         </Typography>
-      </Box>
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'space-around'
-        }}
-      >
-        <NavLink
-          to={'/'}
-        >
-          Home
-        </NavLink>
-
-      </Box>
+      </Button>
     </Box>
   )
 }

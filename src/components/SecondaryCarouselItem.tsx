@@ -1,4 +1,4 @@
-import { Box } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import React from 'react'
 
 interface CarouselImage {
@@ -12,9 +12,7 @@ interface CarouselItemProps {
 
 export const HeadCarouselItem = (props: CarouselItemProps) => {
   const { item } = props
-  const imgHover = (bool: boolean) => {
-    bool ? console.log('enter') : console.log('left')
-  }
+
   return (
     <Box
       key={item.img}
@@ -27,6 +25,16 @@ export const HeadCarouselItem = (props: CarouselItemProps) => {
     >
       <Box
         sx={{
+          textAlign: 'center',
+          minHeight: '15%'
+        }}
+      >
+        <Typography>
+          {item.title}
+        </Typography>
+      </Box>
+      <Box
+        sx={{
           width: '100%',
           height: '80%'
         }}
@@ -35,8 +43,6 @@ export const HeadCarouselItem = (props: CarouselItemProps) => {
           src={item.img}
           alt={item.title}
           loading={'lazy'}
-          onMouseEnter={() => imgHover(true)}
-          onMouseLeave={() => imgHover(false)}
           style={{
             width: '100%',
             height: '100%',
@@ -44,6 +50,19 @@ export const HeadCarouselItem = (props: CarouselItemProps) => {
           }}
         />
       </Box >
+      <Box
+        sx={{
+          display: 'flex'
+        }}
+      >
+        <Box>
+
+        </Box>
+        <Box>
+
+        </Box>
+
+      </Box>
     </Box >
   )
 }

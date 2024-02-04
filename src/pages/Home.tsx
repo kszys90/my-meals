@@ -9,7 +9,7 @@ export const Home = (props: any) => {
     <Box
       sx={{
         minHeight: '100vh',
-        width: '100vw'
+        width: '100%'
       }}
     >
       <Box
@@ -26,7 +26,7 @@ export const Home = (props: any) => {
           justifyContent: 'center',
           alignContent: 'center',
           textAlign: 'center',
-          width: '100%'
+          width: '99%'
         }}
       >
         <Zoom
@@ -106,14 +106,13 @@ export const Home = (props: any) => {
       >
         <Box
           sx={{
-            height: { xs: '22vh', xl: '14vh' },
+            minHeight: { xs: '22vh', xl: '14vh' },
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
             paddingBottom: '20px',
-            paddingTop: '20px',
-            marginTop: '50px'
+            paddingTop: '20px'
           }}
         >
           <Box
