@@ -76,58 +76,39 @@ export default HeadCarousel
 
 const itemData = [
   {
-    img: 'https://www.themealdb.com/images/media/meals/zadvgb1699012544.jpg',
-    title: 'Bed',
-    author: 'swabdesign'
+    img: 'https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg',
+    title: 'Vegetarian'
+  },
+  {
+    img: 'https://www.themealdb.com/images/media/meals/1525873040.jpg',
+    title: 'Seafood'
+  },
+  {
+    img: 'https://www.themealdb.com/images/media/meals/atd5sh1583188467.jpg',
+    title: 'Pork'
   },
   {
     img: 'https://www.themealdb.com/images/media/meals/oe8rg51699014028.jpg',
-    title: 'Books',
-    author: 'Pavel Nekoranec'
+    title: 'Dessert'
   },
   {
-    img: 'https://www.themealdb.com/images/media/meals/60oc3k1699009846.jpg',
-    title: 'Sink',
-    author: 'Charles Deluvio'
-  },
-  {
-    img: 'https://www.themealdb.com/images/media/meals/0206h11699013358.jpg',
-    title: 'Kitchen',
-    author: 'Christian Mackie'
-  },
-  {
-    img: 'https://www.themealdb.com/images/media/meals/kos9av1699014767.jpg',
-    title: 'Blinds',
-    author: 'Darren Richardson'
-  },
-  {
-    img: 'https://www.themealdb.com/images/media/meals/q8sp3j1593349686.jpg',
-    title: 'Chairs',
-    author: 'Taylor Simpson'
-  },
-  {
-    img: 'https://www.themealdb.com/images/media/meals/qrqywr1503066605.jpg',
-    title: 'Laptop',
-    author: 'Ben Kolde'
-  },
-  {
-    img: 'https://www.themealdb.com/images/media/meals/qtqwwu1511792650.jpg',
-    title: 'Doors',
-    author: 'Philipp Berndt'
-  },
-  {
-    img: 'https://www.themealdb.com/images/media/meals/uwxqwy1483389553.jpg',
-    title: 'Coffee',
-    author: 'Jen P.'
-  },
-  {
-    img: 'https://www.themealdb.com/images/media/meals/sywrsu1511463066.jpg',
-    title: 'Storage',
-    author: 'Douglas Sheppard'
+    img: 'https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg',
+    title: 'Chicken'
   },
   {
     img: 'https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg',
-    title: 'Candle',
-    author: 'Fi Bell'
+    title: 'Breakfast'
+  },
+  {
+    img: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    title: 'Lamb'
+  },
+  {
+    img: 'https://www.themealdb.com/images/media/meals/usywpp1511189717.jpg',
+    title: 'Pasta'
+  },
+  {
+    img: 'https://www.themealdb.com/images/media/meals/ctg8jd1585563097.jpg',
+    title: 'Beef'
   }
 ]

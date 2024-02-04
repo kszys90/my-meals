@@ -37,7 +37,7 @@ export const HeadCarouselItem = (props: CarouselItemProps) => {
             fontSize: { xs: '22px', xl: '25px' }
           }}
         >
-          Meal category
+          {item.title}
         </Typography>
       </Box>
       <Box

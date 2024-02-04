@@ -18,7 +18,6 @@ export const Home = (props: any) => {
         }}
       >
       </Box>
-
       <Box
         sx={{
           display: 'flex',
