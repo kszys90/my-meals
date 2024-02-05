@@ -3,6 +3,7 @@ import { Box, Typography, Zoom, Button } from '@mui/material'
 import ArrowDropDownCircleIcon from '@mui/icons-material/ArrowDropDownCircle'
 import HeadCarousel from '../components/HeadCarousel'
 import CategoryItem from '../components/CategoryItem'
+import RandomMeal from '../components/RandomMeal'
 
 export const Home = (props: any) => {
   return (
@@ -94,6 +95,7 @@ export const Home = (props: any) => {
       </Zoom>
       <CategoryItem />
       <CategoryItem />
+      <RandomMeal item={randomMealTemp} />
       <CategoryItem />
       <CategoryItem />
       <CategoryItem />
@@ -105,3 +107,19 @@ export const Home = (props: any) => {
 }
 
 export default Home
+
+type RandomData = {
+  title: string
+  category: string
+  area: string
+  img: string
+  id: string
+}
+
+const randomMealTemp: RandomData = {
+  title: 'Hot and Sour Soup',
+  category: 'Pork',
+  area: 'Chinese',
+  img: 'https://www.themealdb.com/images/media/meals/1529445893.jpg',
+  id: '123'
+}
