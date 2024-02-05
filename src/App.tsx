@@ -1,7 +1,5 @@
 import React from 'react'
-import { ThemeProvider, Box, createTheme, IconButton } from '@mui/material'
-import Brightness4Icon from '@mui/icons-material/Brightness4'
-import Brightness7Icon from '@mui/icons-material/Brightness7'
+import { ThemeProvider, Box, createTheme } from '@mui/material'
 import createThemes from './themes/CreateThemes'
 // import NavBar from './components/NavBar'
 import { Routes, Route } from 'react-router-dom'
@@ -9,11 +7,12 @@ import SearchResults from './pages/SearchResults'
 import LogIn from './pages/LogIn'
 import RegisterPage from './pages/Register'
 import Home from './pages/Home'
+import NavBar from './components/NavBar'
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => { } })
 
 function App() {
-  const [mode, setMode] = React.useState<'light' | 'dark'>('light')
+  const [mode, setMode] = React.useState<'light' | 'dark'>('dark')
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
@@ -36,24 +35,15 @@ function App() {
         >
           <Box
             sx={{
-              height: '5vh',
               display: 'flex',
               alignItems: 'center'
             }}
           >
-            <IconButton
-              onClick={colorMode.toggleColorMode}
-              sx={{
-                color: (theme) => theme.palette.primary.dark,
-                position: 'fixed',
-                right: 0,
-                zIndex: 4
-              }}
-            >
-              {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-            </IconButton>
           </Box>
-          {/* <NavBar /> */}
+          <NavBar
+            siteMode={mode}
+            onIconClick={colorMode.toggleColorMode}
+          />
           <Routes>
             <Route
               path={'/sign-in'}
