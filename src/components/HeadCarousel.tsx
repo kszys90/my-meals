@@ -76,10 +76,6 @@ export default HeadCarousel
 
 const itemData = [
   {
-    img: 'https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg',
-    title: 'Vegetarian'
-  },
-  {
     img: 'https://www.themealdb.com/images/media/meals/1525873040.jpg',
     title: 'Seafood'
   },

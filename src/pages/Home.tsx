@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Typography, Zoom, Button } from '@mui/material'
 import ArrowDropDownCircleIcon from '@mui/icons-material/ArrowDropDownCircle'
 import HeadCarousel from '../components/HeadCarousel'
-import SecondaryCarousel from '../components/SecondaryCarousel'
+import CategoryItem from '../components/CategoryItem'
 
 export const Home = (props: any) => {
   return (
@@ -12,12 +12,6 @@ export const Home = (props: any) => {
         width: '100%'
       }}
     >
-      <Box
-        sx={{
-          height: '5vh'
-        }}
-      >
-      </Box>
       <Box
         sx={{
           display: 'flex',
@@ -98,46 +92,14 @@ export const Home = (props: any) => {
           </Button>
         </Box>
       </Zoom>
-
-      <Zoom
-        in={true}
-        style={{ transitionDelay: '500ms' }}
-      >
-        <Box
-          sx={{
-            minHeight: { xs: '22vh', xl: '14vh' },
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            paddingBottom: '20px',
-            paddingTop: '20px'
-          }}
-        >
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'left',
-              alignItems: 'center',
-              width: '100%',
-              maxWidth: '1200px',
-              height: '20%',
-              paddingBottom: '10px',
-              paddingTop: '10px'
-            }}
-          >
-            <Typography
-              variant={'h6'}
-              sx={{
-                paddingLeft: '25px'
-              }}
-            >
-              Category name
-            </Typography>
-          </Box>
-          <SecondaryCarousel />
-        </Box>
-      </Zoom>
+      <CategoryItem />
+      <CategoryItem />
+      <CategoryItem />
+      <CategoryItem />
+      <CategoryItem />
+      <CategoryItem />
+      <CategoryItem />
+      <CategoryItem />
     </Box >
   )
 }
