@@ -16,8 +16,10 @@ export const HeadCarousel = () => {
           display: 'flex',
           justifyContent: 'center',
           height: '100%',
-          width: '95%',
-          maxWidth: '1200px'
+          width: '100%',
+          maxWidth: '1200px',
+          backgroundColor: theme => theme.palette.background.paper,
+          boxShadow: 15
         }}
       >
         <Swiper

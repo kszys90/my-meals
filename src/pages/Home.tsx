@@ -61,10 +61,7 @@ export const Home = (props: any) => {
               justifyContent: 'center',
               alignItems: 'center',
               paddingBottom: '20px',
-              paddingTop: '10px',
-              backgroundColor: theme => theme.palette.background.paper,
-              boxShadow: 15
-
+              paddingTop: '10px'
             }}
           >
             <HeadCarousel />
@@ -95,11 +92,13 @@ export const Home = (props: any) => {
       </Zoom>
       <CategoryItem />
       <CategoryItem />
-      <RandomMeal item={randomMealTemp} />
+      <RandomMeal />
       <CategoryItem />
       <CategoryItem />
+      <RandomMeal />
       <CategoryItem />
       <CategoryItem />
+      <RandomMeal />
       <CategoryItem />
       <CategoryItem />
     </Box >
@@ -107,19 +106,3 @@ export const Home = (props: any) => {
 }
 
 export default Home
-
-type RandomData = {
-  title: string
-  category: string
-  area: string
-  img: string
-  id: string
-}
-
-const randomMealTemp: RandomData = {
-  title: 'Hot and Sour Soup',
-  category: 'Pork',
-  area: 'Chinese',
-  img: 'https://www.themealdb.com/images/media/meals/1529445893.jpg',
-  id: '123'
-}
