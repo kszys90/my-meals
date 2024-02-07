@@ -8,6 +8,7 @@ import LogIn from './pages/LogIn'
 import RegisterPage from './pages/Register'
 import Home from './pages/Home'
 import NavBar from './components/NavBar'
+import { Search } from './pages/Search'
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => { } })
 
@@ -58,9 +59,14 @@ function App() {
               element={<Home />}
             />
             <Route
-              path={'/search/:searchPhrase'}
-              element={<SearchResults />}
-            />
+              path={'/search'}
+              element={<Search />}
+            >
+              <Route
+                path={':searchedPhrase'}
+                element={<SearchResults />}
+              />
+            </Route>
 
           </Routes>
           {/* <Footer /> */}

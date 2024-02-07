@@ -1,21 +1,11 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
+import { MealData } from './SecondaryCarousel'
 
-interface CarouselImage {
-  img: string,
-  title: string
-}
-
-interface CarouselItemProps {
-  item: CarouselImage
-}
-
-export const HeadCarouselItem = (props: CarouselItemProps) => {
-  const { item } = props
-
+export const HeadCarouselItem = ({ meal }: { meal: MealData }) => {
   return (
     <Box
-      key={item.img}
+      key={meal.idMeal}
       sx={{
         width: '100%',
         height: '100%',
@@ -25,23 +15,13 @@ export const HeadCarouselItem = (props: CarouselItemProps) => {
     >
       <Box
         sx={{
-          textAlign: 'center',
-          minHeight: '15%'
-        }}
-      >
-        <Typography>
-          {item.title}
-        </Typography>
-      </Box>
-      <Box
-        sx={{
           width: '100%',
-          height: '80%'
+          height: { xs: '65%', sm: '75%' }
         }}
       >
         <img
-          src={item.img}
-          alt={item.title}
+          src={meal.strMealThumb}
+          alt={meal.strMeal}
           loading={'lazy'}
           style={{
             width: '100%',
@@ -52,16 +32,17 @@ export const HeadCarouselItem = (props: CarouselItemProps) => {
       </Box >
       <Box
         sx={{
-          display: 'flex'
+          textAlign: 'center',
+          minHeight: '25%'
         }}
       >
-        <Box>
-
-        </Box>
-        <Box>
-
-        </Box>
-
+        <Typography
+          sx={{
+            fontSize: { xs: '13px', sm: '16px' }
+          }}
+        >
+          {meal.strMeal}
+        </Typography>
       </Box>
     </Box >
   )

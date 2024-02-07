@@ -6,6 +6,8 @@ import SecondaryCarousel from '../components/SecondaryCarousel'
 import RandomMeal from '../components/RandomMeal'
 
 export const Home = (props: any) => {
+  const handleArrowClick = (event: React.MouseEvent<HTMLElement>) => {
+  }
   return (
     <Box
       sx={{
@@ -72,7 +74,6 @@ export const Home = (props: any) => {
         in={true}
         style={{ transitionDelay: '500ms' }}
       >
-
         <Box
           sx={{
             height: '15vh',
@@ -81,7 +82,9 @@ export const Home = (props: any) => {
             justifyContent: 'center'
           }}
         >
-          <Button>
+          <Button
+            onClick={handleArrowClick}
+          >
             <ArrowDropDownCircleIcon
               sx={{
                 fontSize: '60px'
@@ -90,17 +93,18 @@ export const Home = (props: any) => {
           </Button>
         </Box>
       </Zoom>
-      <SecondaryCarousel />
-      {/* <SecondaryCarousel /> */}
-      <RandomMeal />
-      {/* <SecondaryCarousel />
-      <SecondaryCarousel />
-      <RandomMeal />
-      <SecondaryCarousel />
-      <SecondaryCarousel />
-      <RandomMeal />
-      <SecondaryCarousel />
-      <SecondaryCarousel /> */}
+      <article id={'article'}>
+        <RandomMeal />
+        <SecondaryCarousel category={'Seafood'} />
+        <SecondaryCarousel category={'Pork'} />
+        <SecondaryCarousel category={'Dessert'} />
+        <SecondaryCarousel category={'Chicken'} />
+        <RandomMeal />
+        <SecondaryCarousel category={'Breakfast'} />
+        <SecondaryCarousel category={'Lamb'} />
+        <SecondaryCarousel category={'Pasta'} />
+        <SecondaryCarousel category={'Beef'} />
+      </article>
     </Box >
   )
 }

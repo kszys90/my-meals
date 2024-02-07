@@ -4,7 +4,6 @@ export const getRandom = (url: string) => {
       return r.json()
     })
     .then((data) => {
-      console.log(data)
       return data
     })
 }
