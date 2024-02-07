@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Typography, Zoom, Button } from '@mui/material'
 import ArrowDropDownCircleIcon from '@mui/icons-material/ArrowDropDownCircle'
 import HeadCarousel from '../components/HeadCarousel'
-import CategoryItem from '../components/CategoryItem'
+import SecondaryCarousel from '../components/SecondaryCarousel'
 import RandomMeal from '../components/RandomMeal'
 
 export const Home = (props: any) => {
@@ -90,17 +90,17 @@ export const Home = (props: any) => {
           </Button>
         </Box>
       </Zoom>
-      <CategoryItem />
-      <CategoryItem />
+      <SecondaryCarousel />
+      {/* <SecondaryCarousel /> */}
       <RandomMeal />
-      <CategoryItem />
-      <CategoryItem />
+      {/* <SecondaryCarousel />
+      <SecondaryCarousel />
       <RandomMeal />
-      <CategoryItem />
-      <CategoryItem />
+      <SecondaryCarousel />
+      <SecondaryCarousel />
       <RandomMeal />
-      <CategoryItem />
-      <CategoryItem />
+      <SecondaryCarousel />
+      <SecondaryCarousel /> */}
     </Box >
   )
 }

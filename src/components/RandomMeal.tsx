@@ -5,19 +5,6 @@ import { getRandom } from '../api/getRandom'
 import { useAsyncFn } from 'react-use'
 import CircularProgress from '@mui/material/CircularProgress'
 
-// type RandomData = {
-//   title: string
-//   category: string
-//   area: string
-//   img: string
-//   id: string
-//   ingr1: string
-//   ingr2: string
-//   ingr3: string
-//   ingr4: string
-//   ingr5: string
-// }
-
 export const RandomMeal = () => {
   const [state, doFetch] = useAsyncFn(getRandom)
   React.useEffect(() => {
@@ -56,7 +43,8 @@ export const RandomMeal = () => {
           </Box>
           : !state.value ?
             'No data'
-            : <>
+            :
+            <>
               <Box
                 sx={{
                   width: { xs: '100%', sm: '50%' },
