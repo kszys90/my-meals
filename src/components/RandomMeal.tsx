@@ -19,8 +19,8 @@ export const RandomMeal = () => {
         flexDirection: { xs: 'column', sm: 'row' },
         justifyContent: 'center',
         alignItems: 'center',
-        paddingBottom: '10px',
-        paddingTop: '10px',
+        marginY: '30px',
+        paddingY: '10px',
         backgroundColor: theme => theme.palette.background.paper,
         boxShadow: 15
       }}

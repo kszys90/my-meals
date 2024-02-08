@@ -12,7 +12,7 @@ export const HomeTitle = () => {
         >
             <Box
                 sx={{
-                    height: '25vh',
+                    height: { xs: '25vh', xl: '40vh' },
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
@@ -23,7 +23,7 @@ export const HomeTitle = () => {
             >
                 <Typography
                     variant={'h1'}
-                    sx={{ fontSize: { xs: '60px', md: '65px', xl: '100px' }, fontWeight: 900, paddingBottom: '15px' }}
+                    sx={{ fontSize: { xs: '60px', md: '65px', xl: '120px' }, fontWeight: 900, paddingBottom: '15px' }}
                 >My Meals
                 </Typography>
                 <Typography

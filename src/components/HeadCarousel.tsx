@@ -1,4 +1,4 @@
-import { Box } from '@mui/material'
+import { Box, Zoom } from '@mui/material'
 import React from 'react'
 import { Navigation, Scrollbar, Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -10,12 +10,17 @@ import HeadCarouselItem from './HeadCarouselItem'
 
 export const HeadCarousel = () => {
   return (
-    <>
+    <Zoom
+      in={true}
+      style={{ transitionDelay: '500ms' }}
+    >
       <Box
         sx={{
+          height: { xs: '50vh', xl: '35vh' },
+          paddingBottom: '20px',
+          paddingTop: '10px',
           display: 'flex',
           justifyContent: 'center',
-          height: '100%',
           width: '100%',
           maxWidth: '1200px',
           backgroundColor: theme => theme.palette.background.paper,
@@ -70,7 +75,7 @@ export const HeadCarousel = () => {
           }
         </Swiper>
       </Box >
-    </>
+    </ Zoom>
   )
 }
 
