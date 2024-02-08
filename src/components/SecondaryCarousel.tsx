@@ -61,7 +61,6 @@ export const SecondaryCarousel = ({ category }: { category: string }) => {
                       justifyContent: 'left',
                       alignItems: 'center',
                       width: '100%',
-                      maxWidth: '1200px',
                       height: '20%',
                       paddingBottom: '10px',
                       paddingTop: '10px'

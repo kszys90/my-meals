@@ -14,8 +14,7 @@ export const RandomMeal = () => {
     <Box
       sx={{
         height: { xs: '40vh', xl: '35vh' },
-        maxWidth: '1200px',
-        margin: '0 auto 0 auto',
+        width: '100%',
         display: 'flex',
         flexDirection: { xs: 'column', sm: 'row' },
         justifyContent: 'center',
