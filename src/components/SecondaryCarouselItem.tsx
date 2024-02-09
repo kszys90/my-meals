@@ -3,12 +3,15 @@ import React from 'react'
 import { MealData } from './SecondaryCarousel'
 
 export const SecondaryCarouselItem = ({ meal }: { meal: MealData }) => {
+  function truncate(str: string, maxLength: number) {
+    return str.length > maxLength ? str.slice(0, maxLength - 1) + '...' : str
+  }
   return (
     <Box
       key={meal.idMeal}
       sx={{
         width: '100%',
-        height: '100%',
+        minHeight: '100%',
         display: 'flex',
         flexDirection: 'column'
       }}
@@ -41,7 +44,7 @@ export const SecondaryCarouselItem = ({ meal }: { meal: MealData }) => {
             fontSize: { xs: '13px', sm: '16px' }
           }}
         >
-          {meal.strMeal}
+          {truncate(meal.strMeal, 40)}
         </Typography>
       </Box>
     </Box >

@@ -14,7 +14,7 @@ import Footer from './components/Footer'
 const ColorModeContext = React.createContext({ toggleColorMode: () => { } })
 
 function App() {
-  const [mode, setMode] = React.useState<'light' | 'dark'>('dark')
+  const [mode, setMode] = React.useState<'light' | 'dark'>('light')
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {

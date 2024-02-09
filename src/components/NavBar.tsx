@@ -15,7 +15,6 @@ export const NavBar = (props: NavBarProps) => {
     <Box
       sx={{
         height: '6vh',
-
         display: 'flex',
         justifyContent: 'space-between',
         position: 'sticky',

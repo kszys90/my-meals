@@ -8,7 +8,7 @@ import { HomeArrowDropdown } from '../components/HomeArrorDropdown'
 import { categories } from '../utils/headCategories'
 
 export const Home = () => {
-  const childRefs: any = React.useRef([])
+  const childRefs = React.useRef<HTMLDivElement[] | null[]>([])
   const createCarousels = (start: number, end: number): ReactNode => {
     // eslint-disable-next-line array-callback-return
     return categories.map((element, index) => {
@@ -16,12 +16,16 @@ export const Home = () => {
         return (
           <Box
             key={`${index}${element}`}
-            ref={el => (childRefs.current[index] = el)}
+            ref={(el: HTMLDivElement | null) => {
+              if (el && childRefs.current) {
+                childRefs.current[index] = el
+              }
+            }}
           >
             <SecondaryCarousel
               category={element.category}
             />
-          </Box>
+          </Box >
         )
       }
     })

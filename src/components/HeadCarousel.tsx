@@ -9,9 +9,19 @@ import 'swiper/css/autoplay'
 import HeadCarouselItem from './HeadCarouselItem'
 import { categories } from '../utils/headCategories'
 
-export const HeadCarousel = ({ refList }: any) => {
-  const scrollToElement = (ref: any) => {
-    ref.scrollIntoView({ behavior: 'smooth' })
+interface Props {
+  refList: React.MutableRefObject<(HTMLDivElement | null)[]>; // Explicitly define refList's type
+}
+
+export const HeadCarousel: React.FC<Props> = ({ refList }) => {
+  const scrollToElement = (ref: HTMLDivElement) => {
+    const refTop = ref.offsetTop
+    const additionalPixels = window.innerHeight * 0.06
+    const targetPosition = refTop - additionalPixels
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    })
   }
   return (
     <Zoom
@@ -62,8 +72,7 @@ export const HeadCarousel = ({ refList }: any) => {
               slidesPerView: 5,
               spaceBetween: 1
             }
-          }
-          }
+          }}
         >
           {
             categories.map((element, index) => (
@@ -73,14 +82,14 @@ export const HeadCarousel = ({ refList }: any) => {
                 <HeadCarouselItem
                   item={element}
                   key={element.img}
-                  onButtonClick={() => scrollToElement(refList.current[index])}
+                  onButtonClick={refList && refList.current ? () => scrollToElement(refList.current[index]!) : null}
                 />
               </SwiperSlide>
             ))
           }
         </Swiper>
       </Box >
-    </ Zoom>
+    </Zoom>
   )
 }
 
