@@ -22,7 +22,7 @@ export const RandomMeal = () => {
         marginY: '30px',
         paddingY: '10px',
         backgroundColor: theme => theme.palette.background.paper,
-        boxShadow: 15
+        boxShadow: 5
       }}
     >
       {state.loading ?
@@ -111,7 +111,12 @@ export const RandomMeal = () => {
                     }}
                   />
                 </Box>
-                <Button variant={'contained'}>
+                <Button
+                  variant={'contained'}
+                  sx={{
+                    boxShadow: 15
+                  }}
+                >
                   Show more
                 </Button>
               </Box>

@@ -1,12 +1,31 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { Box, Container } from '@mui/material'
 import HeadCarousel from '../components/HeadCarousel'
 import SecondaryCarousel from '../components/SecondaryCarousel'
 import RandomMeal from '../components/RandomMeal'
 import { HomeTitle } from '../components/HomeTitle'
 import { HomeArrowDropdown } from '../components/HomeArrorDropdown'
+import { categories } from '../utils/headCategories'
 
-export const Home = (props: any) => {
+export const Home = () => {
+  const childRefs: any = React.useRef([])
+  const createCarousels = (start: number, end: number): ReactNode => {
+    // eslint-disable-next-line array-callback-return
+    return categories.map((element, index) => {
+      if (index >= start && index <= end) {
+        return (
+          <Box
+            key={`${index}${element}`}
+            ref={el => (childRefs.current[index] = el)}
+          >
+            <SecondaryCarousel
+              category={element.category}
+            />
+          </Box>
+        )
+      }
+    })
+  }
   return (
     <Box
       sx={{
@@ -26,18 +45,12 @@ export const Home = (props: any) => {
         }}
       >
         <HomeTitle />
-        <HeadCarousel />
+        <HeadCarousel refList={childRefs} />
         <HomeArrowDropdown />
         <RandomMeal />
-        <SecondaryCarousel category={'Seafood'} />
-        <SecondaryCarousel category={'Pork'} />
-        <SecondaryCarousel category={'Dessert'} />
-        <SecondaryCarousel category={'Chicken'} />
+        {createCarousels(0, 3)}
         <RandomMeal />
-        <SecondaryCarousel category={'Breakfast'} />
-        <SecondaryCarousel category={'Lamb'} />
-        <SecondaryCarousel category={'Pasta'} />
-        <SecondaryCarousel category={'Beef'} />
+        {createCarousels(4, 7)}
       </Container>
     </Box >
   )

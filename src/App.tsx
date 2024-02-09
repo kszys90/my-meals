@@ -9,11 +9,12 @@ import RegisterPage from './pages/Register'
 import Home from './pages/Home'
 import NavBar from './components/NavBar'
 import { Search } from './pages/Search'
+import Footer from './components/Footer'
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => { } })
 
 function App() {
-  const [mode, setMode] = React.useState<'light' | 'dark'>('light')
+  const [mode, setMode] = React.useState<'light' | 'dark'>('dark')
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
@@ -30,17 +31,9 @@ function App() {
           sx={{
             minHeight: '100vh',
             height: '100%',
-            backgroundColor: (theme) => theme.palette.background.default,
-            overflow: 'hidden'
+            backgroundColor: (theme) => theme.palette.background.default
           }}
         >
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center'
-            }}
-          >
-          </Box>
           <NavBar
             siteMode={mode}
             onIconClick={colorMode.toggleColorMode}
@@ -69,7 +62,7 @@ function App() {
             </Route>
 
           </Routes>
-          {/* <Footer /> */}
+          <Footer />
         </Box>
       </ThemeProvider >
     </ColorModeContext.Provider >

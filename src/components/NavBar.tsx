@@ -4,29 +4,41 @@ import MenuIcon from '@mui/icons-material/Menu'
 import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
 
-export const NavBar = (props: any) => {
-  const { mode, onIconClick } = props
+interface NavBarProps {
+  siteMode: 'light' | 'dark'
+  onIconClick: React.MouseEventHandler<HTMLButtonElement>
+}
+
+export const NavBar = (props: NavBarProps) => {
+  const { siteMode, onIconClick } = props
   return (
     <Box
       sx={{
         height: '6vh',
+
         display: 'flex',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        position: 'sticky',
+        top: 0.01,
+        zIndex: 4,
+        backgroundColor: theme => theme.palette.primary.main,
+        boxShadow: 5
       }}
     >
       <Button variant={'text'}>
-        <MenuIcon />
+        <MenuIcon
+          sx={{
+            color: (theme) => theme.palette.primary.contrastText
+          }}
+        />
       </Button>
       <IconButton
         onClick={onIconClick}
         sx={{
-          color: (theme) => theme.palette.primary.dark,
-          position: 'fixed',
-          right: 0,
-          zIndex: 4
+          color: (theme) => theme.palette.primary.contrastText
         }}
       >
-        {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+        {siteMode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
       </IconButton>
     </Box>
   )

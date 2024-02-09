@@ -5,14 +5,17 @@ export const Footer = () => {
   return (
     <Box
       sx={{
-
-        height: '5vh',
+        height: '6vh',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        zIndex: 4,
+        backgroundColor: theme => theme.palette.primary.dark,
+        boxShadow: 5,
+        color: theme => theme.palette.primary.contrastText
       }}
     >
-      CREATED BY KRZYŚ
+      CREATED BY KSZYS90 GITHUB
     </Box>
   )
 }

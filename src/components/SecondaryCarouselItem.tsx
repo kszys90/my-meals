@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material'
 import React from 'react'
 import { MealData } from './SecondaryCarousel'
 
-export const HeadCarouselItem = ({ meal }: { meal: MealData }) => {
+export const SecondaryCarouselItem = ({ meal }: { meal: MealData }) => {
   return (
     <Box
       key={meal.idMeal}
@@ -48,4 +48,4 @@ export const HeadCarouselItem = ({ meal }: { meal: MealData }) => {
   )
 }
 
-export default HeadCarouselItem
+export default SecondaryCarouselItem

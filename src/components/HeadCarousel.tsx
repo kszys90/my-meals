@@ -7,8 +7,12 @@ import 'swiper/css/navigation'
 import 'swiper/css/scrollbar'
 import 'swiper/css/autoplay'
 import HeadCarouselItem from './HeadCarouselItem'
+import { categories } from '../utils/headCategories'
 
-export const HeadCarousel = () => {
+export const HeadCarousel = ({ refList }: any) => {
+  const scrollToElement = (ref: any) => {
+    ref.scrollIntoView({ behavior: 'smooth' })
+  }
   return (
     <Zoom
       in={true}
@@ -24,7 +28,7 @@ export const HeadCarousel = () => {
           width: '100%',
           maxWidth: '1200px',
           backgroundColor: theme => theme.palette.background.paper,
-          boxShadow: 15
+          boxShadow: 8
         }}
       >
         <Swiper
@@ -62,13 +66,14 @@ export const HeadCarousel = () => {
           }
         >
           {
-            itemData.map((item) => (
+            categories.map((element, index) => (
               <SwiperSlide
-                key={item.img}
+                key={element.img}
               >
                 <HeadCarouselItem
-                  item={item}
-                  key={item.img}
+                  item={element}
+                  key={element.img}
+                  onButtonClick={() => scrollToElement(refList.current[index])}
                 />
               </SwiperSlide>
             ))
@@ -80,38 +85,3 @@ export const HeadCarousel = () => {
 }
 
 export default HeadCarousel
-
-const itemData = [
-  {
-    img: 'https://www.themealdb.com/images/media/meals/1525873040.jpg',
-    title: 'Seafood'
-  },
-  {
-    img: 'https://www.themealdb.com/images/media/meals/atd5sh1583188467.jpg',
-    title: 'Pork'
-  },
-  {
-    img: 'https://www.themealdb.com/images/media/meals/oe8rg51699014028.jpg',
-    title: 'Dessert'
-  },
-  {
-    img: 'https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg',
-    title: 'Chicken'
-  },
-  {
-    img: 'https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg',
-    title: 'Breakfast'
-  },
-  {
-    img: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
-    title: 'Lamb'
-  },
-  {
-    img: 'https://www.themealdb.com/images/media/meals/usywpp1511189717.jpg',
-    title: 'Pasta'
-  },
-  {
-    img: 'https://www.themealdb.com/images/media/meals/ctg8jd1585563097.jpg',
-    title: 'Beef'
-  }
-]

@@ -3,15 +3,16 @@ import React from 'react'
 
 interface CarouselImage {
   img: string,
-  title: string
+  category: string
 }
 
 interface CarouselItemProps {
   item: CarouselImage
+  onButtonClick: any
 }
 
 export const HeadCarouselItem = (props: CarouselItemProps) => {
-  const { item } = props
+  const { item, onButtonClick } = props
   return (
     <Box
       key={item.img}
@@ -37,7 +38,7 @@ export const HeadCarouselItem = (props: CarouselItemProps) => {
             fontSize: { xs: '22px', xl: '25px' }
           }}
         >
-          {item.title}
+          {item.category}
         </Typography>
       </Box>
       <Box
@@ -48,7 +49,7 @@ export const HeadCarouselItem = (props: CarouselItemProps) => {
       >
         <img
           src={item.img}
-          alt={item.title}
+          alt={item.category}
           loading={'lazy'}
           style={{
             width: '100%',
@@ -65,7 +66,13 @@ export const HeadCarouselItem = (props: CarouselItemProps) => {
           alignItems: 'center'
         }}
       >
-        <Button variant={'contained'}>
+        <Button
+          variant={'contained'}
+          sx={{
+            boxShadow: 15
+          }}
+          onClick={onButtonClick}
+        >
           Show more
         </Button>
 
