@@ -1,12 +1,11 @@
 /* eslint-disable indent */
 import { Box, CircularProgress, Typography } from '@mui/material'
 import React from 'react'
-import { Navigation, Scrollbar } from 'swiper/modules'
+import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useAsyncFn } from 'react-use'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import 'swiper/css/scrollbar'
 import { SecondaryCarouselItem } from './SecondaryCarouselItem'
 import { getRecipes } from '../api/getRecipes'
 
@@ -61,7 +60,7 @@ export const SecondaryCarousel = ({ category }: { category: string }) => {
                       justifyContent: 'left',
                       alignItems: 'center',
                       width: '100%',
-                      height: '20%',
+                      height: '15%',
                       paddingBottom: '10px',
                       paddingTop: '10px'
                     }}
@@ -79,17 +78,16 @@ export const SecondaryCarousel = ({ category }: { category: string }) => {
                     sx={{
                       display: 'flex',
                       justifyContent: 'center',
-                      height: '100%',
-                      width: '95%',
+                      minHeight: '75%',
+                      width: '98%',
                       maxWidth: '1200px'
                     }}
                   >
                     <Swiper
-                      modules={[Navigation, Scrollbar]}
+                      modules={[Navigation]}
                       grabCursor={true}
                       loop={true}
                       navigation
-                      scrollbar={{ draggable: true }}
                       breakpoints={{
                         0: {
                           slidesPerView: 2,

@@ -5,10 +5,11 @@ import React from 'react'
 import ArrowDropDownCircleIcon from '@mui/icons-material/ArrowDropDownCircle'
 import { Box, Zoom, Button } from '@mui/material'
 
-export const HomeArrowDropdown = () => {
-    const handleArrowClick = (event: React.MouseEvent<HTMLElement>) => {
-        console.log('clicked!')
-    }
+interface Props {
+    onArrowClick: any
+}
+
+export const HomeArrowDropdown = ({ onArrowClick }: Props) => {
     return (
         <Zoom
             in={true}
@@ -23,9 +24,10 @@ export const HomeArrowDropdown = () => {
                 }}
             >
                 <Button
-                    onClick={handleArrowClick}
+                    onClick={onArrowClick}
                 >
                     <ArrowDropDownCircleIcon
+
                         sx={{
                             fontSize: '60px'
                         }}

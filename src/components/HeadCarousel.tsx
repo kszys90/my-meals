@@ -8,21 +8,13 @@ import 'swiper/css/scrollbar'
 import 'swiper/css/autoplay'
 import HeadCarouselItem from './HeadCarouselItem'
 import { categories } from '../utils/headCategories'
+import { scrollToElement } from '../utils/scrollToElement'
 
 interface Props {
-  refList: React.MutableRefObject<(HTMLDivElement | null)[]>; // Explicitly define refList's type
+  refList: React.MutableRefObject<(HTMLDivElement | null)[]>
 }
 
 export const HeadCarousel: React.FC<Props> = ({ refList }) => {
-  const scrollToElement = (ref: HTMLDivElement) => {
-    const refTop = ref.offsetTop
-    const additionalPixels = window.innerHeight * 0.06
-    const targetPosition = refTop - additionalPixels
-    window.scrollTo({
-      top: targetPosition,
-      behavior: 'smooth'
-    })
-  }
   return (
     <Zoom
       in={true}

@@ -19,7 +19,7 @@ export const SecondaryCarouselItem = ({ meal }: { meal: MealData }) => {
       <Box
         sx={{
           width: '100%',
-          height: { xs: '65%', sm: '75%' }
+          height: { xs: '60%', sm: '70%' }
         }}
       >
         <img
@@ -36,7 +36,7 @@ export const SecondaryCarouselItem = ({ meal }: { meal: MealData }) => {
       <Box
         sx={{
           textAlign: 'center',
-          minHeight: '25%'
+          height: '30%'
         }}
       >
         <Typography
