@@ -113,16 +113,17 @@ export const SecondaryCarousel = ({ category }: { category: string }) => {
                       }
                     >
                       {
-                        state.value.meals.map((meal: MealData) => (
-                          <SwiperSlide
-                            key={meal.idMeal}
-                          >
-                            <SecondaryCarouselItem
-                              meal={meal}
+                        state.value.meals.sort(() => Math.random() - 0.5)
+                          .map((meal: MealData) => (
+                            <SwiperSlide
                               key={meal.idMeal}
-                            />
-                          </SwiperSlide>
-                        ))
+                            >
+                              <SecondaryCarouselItem
+                                meal={meal}
+                                key={meal.idMeal}
+                              />
+                            </SwiperSlide>
+                          ))
                       }
                     </Swiper>
                   </Box >
