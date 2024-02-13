@@ -1,9 +1,9 @@
 import React from 'react'
-import { Box, FormControl, IconButton, InputBase, InputAdornment, useMediaQuery } from '@mui/material'
+import { Box, IconButton, useMediaQuery } from '@mui/material'
 import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
-import SearchIcon from '@mui/icons-material/Search'
 import { HamburgerButton } from './HamburgerButton'
+import { NavSearchInput } from './NavSearchInput'
 
 interface NavBarProps {
   siteMode: 'light' | 'dark'
@@ -55,36 +55,12 @@ export const NavBar = (props: NavBarProps) => {
           justifyContent: 'center'
         }}
       >
-        <FormControl
-          sx={{
-            marginRight: { xs: '0', sm: '8px' }
-          }}
-        >
-          <InputBase
-            id={'input-with-icon-adornment'}
-            size={matches ? 'medium' : 'small'}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            placeholder={'Search...'}
-            sx={{
-              color: (theme) => theme.palette.primary.contrastText,
-              width: isFocused ? { xs: '12rem', sm: '20rem', md: '30rem' } : '6.2rem',
-              backgroundColor: (theme) => theme.palette.mode === 'dark' ? theme.palette.background.paper : theme.palette.primary.light,
-              padding: '3px',
-              borderRadius: '5px',
-              boxShadow: 1
-            }}
-            endAdornment={
-              <InputAdornment position={'end'} >
-                <SearchIcon
-                  sx={{
-                    color: (theme) => theme.palette.primary.contrastText
-                  }}
-                />
-              </InputAdornment>}
-          />
-        </FormControl>
-
+        <NavSearchInput
+          handleBlur={handleBlur}
+          handleFocus={handleFocus}
+          matches={matches}
+          isFocused={isFocused}
+        />
         <IconButton
           onClick={onIconClick}
           sx={{
