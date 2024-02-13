@@ -35,7 +35,7 @@ export const HamburgerButton = ({ handleClose, onClick, open, state }: Hamburger
                 open={open}
                 onClose={handleClose}
                 MenuListProps={{
-                    'aria-labelledby': 'basic-button'
+                    'aria-labelledby': 'hamb-button'
                 }}
             >
                 <MenuItem>

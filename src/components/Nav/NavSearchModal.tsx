@@ -2,35 +2,36 @@
 /* eslint-disable react/jsx-indent-props */
 /* eslint-disable indent */
 import React from 'react'
-import { FormControl, InputBase, InputAdornment } from '@mui/material'
+import { FormControl, InputBase, InputAdornment, Box } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 
-interface NavSearchInputProps {
-    handleBlur: () => void
-    handleFocus: () => void
-    matches: boolean
-    isFocused: boolean
-}
-
-export const NavSearchInput = ({ handleBlur, handleFocus, matches, isFocused }: NavSearchInputProps) => {
+export const NavSearchModal = () => {
     return (
-        <>
-            <FormControl
-                sx={{
-                    marginRight: { xs: '0', sm: '8px' }
-                }}
-            >
+        <Box
+            sx={{
+                position: 'absolute',
+                top: '30%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: { xs: '80%', sm: '50%' },
+                height: '40vh',
+                bgcolor: 'background.paper',
+                border: '2px solid #000',
+                borderRadius: '15px',
+                boxShadow: 15,
+                p: { xs: '16px', sm: '32px' }
+            }}
+        >
+            <FormControl >
                 <InputBase
                     id={'input-with-icon-adornment'}
-                    size={matches ? 'medium' : 'small'}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
                     placeholder={'Search...'}
                     sx={{
                         color: (theme) => theme.palette.primary.contrastText,
-                        width: isFocused ? { xs: '12rem', sm: '20rem', md: '30rem' } : '6.2rem',
+                        width: '8rem',
                         backgroundColor: (theme) => theme.palette.mode === 'dark' ? theme.palette.background.paper : theme.palette.primary.dark,
-                        padding: '3px',
+                        paddingY: '3px',
+                        paddingX: '10px',
                         borderRadius: '5px',
                         boxShadow: 1
                     }}
@@ -44,6 +45,6 @@ export const NavSearchInput = ({ handleBlur, handleFocus, matches, isFocused }: 
                         </InputAdornment>}
                 />
             </FormControl>
-        </>
+        </Box>
     )
 }
