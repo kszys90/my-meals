@@ -4,15 +4,13 @@
 import React from 'react'
 import { Box } from '@mui/material'
 import { Outlet } from 'react-router-dom'
-import { SearchHeader } from '../components/SearchHeader'
-import { SearchInput } from '../components/SearchInput'
-import { SearchContent } from '../components/SearchContent'
+import { SearchHeader } from '../components/Home/SearchHeader'
+import { SearchContent } from '../components/Home/SearchContent'
 
 export const Search = () => {
     return (
         <Box>
             <SearchHeader />
-            <SearchInput />
             <SearchContent>
                 <Outlet />
             </SearchContent>

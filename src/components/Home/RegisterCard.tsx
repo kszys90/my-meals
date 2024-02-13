@@ -1,7 +1,7 @@
 import { Box, Button, Grow, Paper, TextField, Typography } from '@mui/material'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { getToken, signUp } from '../auth'
+import { getToken, signUp } from '../../auth'
 
 export const RegisterCard = () => {
   const [login, setLogin] = React.useState<string>('')

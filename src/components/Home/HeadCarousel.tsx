@@ -7,8 +7,8 @@ import 'swiper/css/navigation'
 import 'swiper/css/scrollbar'
 import 'swiper/css/autoplay'
 import HeadCarouselItem from './HeadCarouselItem'
-import { categories } from '../utils/headCategories'
-import { scrollToElement } from '../utils/scrollToElement'
+import { categories } from '../../utils/headCategories'
+import { scrollToElement } from '../../utils/scrollToElement'
 
 interface Props {
   refList: React.MutableRefObject<(HTMLDivElement | null)[]>

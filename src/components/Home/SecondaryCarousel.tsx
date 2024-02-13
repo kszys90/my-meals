@@ -7,7 +7,7 @@ import { useAsyncFn } from 'react-use'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { SecondaryCarouselItem } from './SecondaryCarouselItem'
-import { getRecipes } from '../api/getRecipes'
+import { getRecipes } from '../../api/getRecipes'
 
 export interface MealData {
   idMeal: string

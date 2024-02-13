@@ -7,9 +7,9 @@ import SearchResults from './pages/SearchResults'
 import LogIn from './pages/LogIn'
 import RegisterPage from './pages/Register'
 import Home from './pages/Home'
-import NavBar from './components/NavBar'
+import NavBar from './components/Nav/NavBar'
 import { Search } from './pages/Search'
-import Footer from './components/Footer'
+import Footer from './components/Other/Footer'
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => { } })
 

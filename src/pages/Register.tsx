@@ -2,7 +2,7 @@ import React from 'react'
 // import { signUp } from '../auth'
 // import { getToken } from '../auth/token'
 import { Box, Container } from '@mui/material'
-import RegisterCard from '../components/RegisterCard'
+import RegisterCard from '../components/Home/RegisterCard'
 
 export const RegisterPage = () => {
   return (

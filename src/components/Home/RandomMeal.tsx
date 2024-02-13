@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 import { Box, Button, Typography } from '@mui/material'
 import React from 'react'
-import { getRandom } from '../api/getRandom'
+import { getRandom } from '../../api/getRandom'
 import { useAsyncFn } from 'react-use'
 import CircularProgress from '@mui/material/CircularProgress'
 

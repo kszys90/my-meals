@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Container } from '@mui/material'
 // import Loader from '../components/Loader'
-import LoginCard from '../components/LoginCard'
+import LoginCard from '../components/Home/LoginCard'
 
 export const LogIn = () => {
   return (

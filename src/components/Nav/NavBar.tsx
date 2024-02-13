@@ -1,9 +1,9 @@
 import React from 'react'
-import { Box, Button, FormControl, IconButton, InputBase, InputAdornment, useMediaQuery } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
+import { Box, FormControl, IconButton, InputBase, InputAdornment, useMediaQuery } from '@mui/material'
 import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
 import SearchIcon from '@mui/icons-material/Search'
+import { HamburgerButton } from './HamburgerButton'
 
 interface NavBarProps {
   siteMode: 'light' | 'dark'
@@ -11,14 +11,23 @@ interface NavBarProps {
 }
 
 export const NavBar = (props: NavBarProps) => {
-  const matches = useMediaQuery('(min-width:600px)')
   const { siteMode, onIconClick } = props
+  const matches = useMediaQuery('(min-width:600px)')
   const [isFocused, setIsFocused] = React.useState(false)
   const handleFocus = () => {
     setIsFocused(true)
   }
   const handleBlur = () => {
     setIsFocused(false)
+  }
+
+  const [hambMenu, setHambMenu] = React.useState<null | HTMLElement>(null)
+  const hambOpen = Boolean(hambMenu)
+  const handleHambClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setHambMenu(event.currentTarget)
+  }
+  const handleHambClose = () => {
+    setHambMenu(null)
   }
   return (
     <Box
@@ -33,13 +42,12 @@ export const NavBar = (props: NavBarProps) => {
         boxShadow: 5
       }}
     >
-      <Button variant={'text'}>
-        <MenuIcon
-          sx={{
-            color: (theme) => theme.palette.primary.contrastText
-          }}
-        />
-      </Button>
+      <HamburgerButton
+        handleClose={handleHambClose}
+        onClick={handleHambClick}
+        open={hambOpen}
+        state={hambMenu}
+      />
       <Box
         sx={{
           display: 'flex',
@@ -57,11 +65,11 @@ export const NavBar = (props: NavBarProps) => {
             size={matches ? 'medium' : 'small'}
             onFocus={handleFocus}
             onBlur={handleBlur}
-            placeholder={'search...'}
+            placeholder={'Search...'}
             sx={{
               color: (theme) => theme.palette.primary.contrastText,
               width: isFocused ? { xs: '12rem', sm: '20rem', md: '30rem' } : '6.2rem',
-              backgroundColor: (theme) => theme.palette.mode === 'dark' ? theme.palette.background.paper : theme.palette.primary.dark,
+              backgroundColor: (theme) => theme.palette.mode === 'dark' ? theme.palette.background.paper : theme.palette.primary.light,
               padding: '3px',
               borderRadius: '5px',
               boxShadow: 1
@@ -86,7 +94,7 @@ export const NavBar = (props: NavBarProps) => {
           {siteMode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
         </IconButton>
       </Box>
-    </Box>
+    </Box >
   )
 }
 
