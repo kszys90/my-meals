@@ -2,21 +2,27 @@
 /* eslint-disable react/jsx-indent-props */
 /* eslint-disable indent */
 import React from 'react'
-import { Box, Button, CircularProgress, IconButton, InputBase, Link, Modal, Paper } from '@mui/material'
+import { Box, Button, CircularProgress, IconButton, InputBase, Link, Modal, Paper, Grid, Typography } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
-import { getRecipeByName } from '../../api/getRecipeByName'
+import { getRecipesByName } from '../../api/getRecipesByName'
 import { useAsyncFn } from 'react-use'
+import { NavSearchItem } from './NavSearchItem'
+import { type MealData } from '../../types/types'
 
 export const NavSearch = () => {
     const [open, setOpen] = React.useState(false)
     const handleOpen = () => setOpen(true)
     const handleClose = () => setOpen(false)
+    const [isSearched, setIsSearched] = React.useState(false)
 
-    const [state, doFetch] = useAsyncFn(getRecipeByName)
+    const [state, doFetch] = useAsyncFn(getRecipesByName)
     const [searchVal, setSearchVal] = React.useState<string>('')
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
-        doFetch(searchVal)
+        if (searchVal !== '') {
+            event.preventDefault()
+            doFetch(searchVal)
+            setIsSearched(true)
+        }
     }
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchVal(event.target.value)
@@ -48,7 +54,6 @@ export const NavSearch = () => {
                         width: { xs: '80%', md: '70%' },
                         height: '50%',
                         bgcolor: 'background.paper',
-                        border: '2px solid #000',
                         boxShadow: 24,
                         p: { xs: '16px', md: '32px' },
                         display: 'flex',
@@ -91,34 +96,54 @@ export const NavSearch = () => {
                         underline={'hover'}
                         href={'/search'}
                         sx={{
-                            color: (theme) => theme.palette.mode === 'dark' ? theme.palette.primary.contrastText : theme.palette.primary.dark
+                            color: (theme) => theme.palette.mode === 'dark' ? theme.palette.primary.contrastText : theme.palette.primary.dark,
+                            marginBottom: '20px'
                         }}
                     >
                         Explore Advanced Search Options
                     </Link>
-                    <ul>
-                        {
-                            state.loading ?
-                                <Box
-                                    sx={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        height: '100%'
-                                    }}
-                                >
-                                    <CircularProgress size={100} />
+                    {isSearched === false
+                        ? null :
+                        state.loading ?
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    height: '100%'
+                                }}
+                            >
+                                <CircularProgress size={100} />
+                            </Box>
+                            : state.error ?
+                                <Box>
+                                    Error: {state.error.message}
                                 </Box>
-                                : state.error ?
-                                    <Box>
-                                        Error: {state.error.message}
+                                : !state.value ?
+                                    searchVal === '' ? null : 'No data'
+                                    :
+                                    <Box sx={{ flexGrow: 1, overflowY: 'auto' }}>
+                                        {state.value.meals
+                                            ? (
+                                                <Grid
+                                                    container
+                                                    spacing={2}
+                                                >
+                                                    {state.value.meals.map((meal: MealData) => (
+                                                        <NavSearchItem
+                                                            key={meal.idMeal}
+                                                            data={meal}
+                                                        />
+                                                    ))}
+                                                </Grid>
+                                            )
+                                            : (
+                                                <Typography>
+                                                    Oops! No data found
+                                                </Typography>
+                                            )}
                                     </Box>
-                                    : !state.value ?
-                                        'No data'
-                                        :
-                                        <><li>{state.value.meals[0].idMeal}</li><li>to działa!</li></>
-                        }
-                    </ul>
+                    }
                 </Box>
             </Modal>
         </>
