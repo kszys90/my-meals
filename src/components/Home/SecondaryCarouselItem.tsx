@@ -10,6 +10,8 @@ export const SecondaryCarouselItem = ({ meal }: { meal: MealData }) => {
     <Box
       key={meal.idMeal}
       sx={{
+        cursor: 'pointer',
+
         width: '100%',
         minHeight: '100%',
         display: 'flex',

@@ -16,10 +16,11 @@ export const NavSearchItem = ({ data }: { data: MealData }) => {
                 xs={12}
                 sm={6}
                 md={4}
-                xl={1}
+                xl={2}
                 onClick={handleClick}
 
                 sx={{
+                    cursor: 'pointer',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
