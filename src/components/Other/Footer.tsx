@@ -49,7 +49,10 @@ const Footer: React.FC = () => {
           <LinkedInIcon
             fontSize={'large'}
             sx={{
-              color: theme => theme.palette.primary.contrastText
+              color: theme => theme.palette.primary.contrastText,
+              '&:hover': {
+                transform: 'scale(1.15)'
+              }
             }}
           />
         </Link>
@@ -62,7 +65,10 @@ const Footer: React.FC = () => {
           <GitHubIcon
             fontSize={'large'}
             sx={{
-              color: theme => theme.palette.primary.contrastText
+              color: theme => theme.palette.primary.contrastText,
+              '&:hover': {
+                transform: 'scale(1.15)'
+              }
             }}
           />
         </Link>

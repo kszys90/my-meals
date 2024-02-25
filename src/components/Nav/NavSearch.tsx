@@ -35,7 +35,11 @@ export const NavSearch = () => {
                 startIcon={<SearchIcon />}
                 onClick={handleOpen}
                 sx={{
-                    backgroundColor: (theme) => theme.palette.mode === 'dark' ? theme.palette.background.paper : theme.palette.primary.dark
+                    backgroundColor: (theme) => theme.palette.mode === 'dark' ? theme.palette.background.paper : theme.palette.primary.dark,
+                    '&:hover': {
+                        transform: 'scale(1.05)',
+                        boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)'
+                    }
                 }}
             >
                 Search...

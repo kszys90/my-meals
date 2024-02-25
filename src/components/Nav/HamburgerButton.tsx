@@ -23,13 +23,19 @@ export const HamburgerButton = ({ handleClose, onClick, open, state }: Hamburger
                 aria-haspopup={'true'}
                 aria-expanded={open ? 'true' : undefined}
                 onClick={onClick}
+                sx={{
+                    '&:hover': {
+                        transform: 'scale(1.1)',
+                        boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)'
+                    }
+                }}
             >
                 <MenuIcon
                     sx={{
                         color: (theme) => theme.palette.primary.contrastText
                     }}
                 />
-            </Button>
+            </Button >
             <Menu
                 id={'hamb-menu'}
                 anchorEl={state}

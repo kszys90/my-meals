@@ -20,8 +20,14 @@ export const HeadCarouselItem = (props: CarouselItemProps) => {
         width: '100%',
         height: '100%',
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        '&:hover': {
+          transform: 'scale(1.01)',
+          boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)'
+        }
       }}
+      onClick={onButtonClick}
+
     >
       <Box
         sx={{
@@ -71,7 +77,6 @@ export const HeadCarouselItem = (props: CarouselItemProps) => {
           sx={{
             boxShadow: 15
           }}
-          onClick={onButtonClick}
         >
           Show more
         </Button>

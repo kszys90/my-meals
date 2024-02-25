@@ -29,7 +29,11 @@ export const HomeArrowDropdown = ({ onArrowClick }: Props) => {
                     <ArrowDropDownCircleIcon
 
                         sx={{
-                            fontSize: '60px'
+                            fontSize: '60px',
+                            '&:hover': {
+                                transform: 'scale(1.1)',
+                                boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)'
+                            }
                         }}
                     />
                 </Button>

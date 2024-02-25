@@ -51,7 +51,11 @@ export const NavBar = (props: NavBarProps) => {
         <IconButton
           onClick={onIconClick}
           sx={{
-            color: (theme) => theme.palette.primary.contrastText
+            color: (theme) => theme.palette.primary.contrastText,
+            '&:hover': {
+              transform: 'scale(1.1)',
+              boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)'
+            }
           }}
         >
           {siteMode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
