@@ -8,7 +8,6 @@ import { getRecipesByName } from '../../api/getRecipesByName'
 import { useAsyncFn } from 'react-use'
 import { NavSearchItem } from './NavSearchItem'
 import { type MealData } from '../../types/types'
-import { NavLink } from 'react-router-dom'
 
 export const NavSearch = () => {
     const [open, setOpen] = React.useState(false)
@@ -74,7 +73,8 @@ export const NavSearch = () => {
                             display: 'flex',
                             alignItems: 'center',
                             width: { xs: '80%', xl: '800px' },
-                            backgroundColor: (theme) => theme.palette.mode === 'dark' ? theme.palette.background.paper : theme.palette.primary.main
+                            backgroundColor: (theme) => theme.palette.mode === 'dark' ? theme.palette.background.paper : theme.palette.primary.main,
+                            marginBottom: '20px'
                         }}
                     >
                         <InputBase
@@ -96,24 +96,7 @@ export const NavSearch = () => {
                             <SearchIcon />
                         </IconButton>
                     </Paper>
-                    <NavLink
-                        to={'/search'}
-                        onClick={handleClose}
-                    >
-                        <Typography
-                            sx={{
-                                color: (theme) => theme.palette.mode === 'dark' ? theme.palette.primary.contrastText : theme.palette.primary.dark,
-                                textDecoration: 'none',
-                                marginBottom: '20px',
-                                '&:hover': {
-                                    fontWeight: 700,
-                                    transform: 'scale(1.05)'
-                                }
-                            }}
-                        >
-                            Go to Advanced Search Options
-                        </Typography>
-                    </NavLink>
+
                     {isSearched === false
                         ? null :
                         state.loading ?

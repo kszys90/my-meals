@@ -3,12 +3,10 @@ import { ThemeProvider, Box, createTheme } from '@mui/material'
 import createThemes from './themes/CreateThemes'
 // import NavBar from './components/NavBar'
 import { Routes, Route } from 'react-router-dom'
-import SearchResults from './pages/SearchResults'
 import LogIn from './pages/LogIn'
 import RegisterPage from './pages/Register'
 import Home from './pages/Home'
 import NavBar from './components/Nav/NavBar'
-import { Search } from './pages/Search'
 import Footer from './components/Other/Footer'
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => { } })
@@ -51,15 +49,6 @@ function App() {
               path={'/'}
               element={<Home />}
             />
-            <Route
-              path={'/search'}
-              element={<Search />}
-            >
-              <Route
-                path={':searchedPhrase'}
-                element={<SearchResults />}
-              />
-            </Route>
 
           </Routes>
           <Footer />
