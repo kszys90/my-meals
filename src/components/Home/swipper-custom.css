@@ -1,0 +1,34 @@
+.swiper-button-prev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    height: 30px;
+    width: 30px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+}
+
+.swiper-button-prev:hover {
+    transform: scale(1.25)
+}
+
+.swiper-button-next {
+    color: black;
+    height: 30px;
+    width: 30px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+}
+
+.swiper-button-next:hover {
+    transform: scale(1.25)
+}

@@ -2,8 +2,9 @@
 /* eslint-disable react/jsx-indent-props */
 /* eslint-disable indent */
 import React from 'react'
-import { Button, Menu, MenuItem, Link } from '@mui/material'
+import { Button, Menu, MenuItem } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
+import { NavLink } from 'react-router-dom'
 
 interface HamburgerProps {
     handleClose: () => void
@@ -39,22 +40,20 @@ export const HamburgerButton = ({ handleClose, onClick, open, state }: Hamburger
                 }}
             >
                 <MenuItem>
-                    <Link
-                        underline={'hover'}
+                    <NavLink
                         color={'inherit'}
-                        href={'/'}
+                        to={'/'}
                     >
                         Home
-                    </Link>
+                    </NavLink>
                 </MenuItem>
                 <MenuItem>
-                    <Link
-                        underline={'hover'}
+                    <NavLink
                         color={'inherit'}
-                        href={'/search'}
+                        to={'/search'}
                     >
                         Search
-                    </Link>
+                    </NavLink>
                 </MenuItem>
             </Menu>
         </>

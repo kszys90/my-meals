@@ -100,7 +100,7 @@ export const NavSearch = () => {
                             marginBottom: '20px'
                         }}
                     >
-                        Explore Advanced Search Options
+                        Go to Advanced Search Options
                     </Link>
                     {isSearched === false
                         ? null :
