@@ -6,6 +6,7 @@ import React from 'react'
 import { MealData } from './SecondaryCarousel'
 import { getByID } from '../../api/getById'
 import { useAsyncFn } from 'react-use'
+import RecipeWindow from './RecipeWindow'
 
 export const SecondaryCarouselItem = ({ meal }: { meal: MealData }) => {
   function truncate(str: string, maxLength: number) {
@@ -111,7 +112,7 @@ export const SecondaryCarouselItem = ({ meal }: { meal: MealData }) => {
                 <Box sx={{ flexGrow: 1, overflowY: 'auto' }}>
                   {state.value.meals
                     ? (
-                      'done!'
+                      <RecipeWindow state={state.value.meals[0]} />
                     )
                     : (
                       <Typography>

@@ -3,7 +3,7 @@
 /* eslint-disable indent */
 import React from 'react'
 import { MealData } from '../../types/types'
-import { Grid } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 
 type Meal = {
     ingredient: string,
@@ -55,7 +55,24 @@ export default function RecipeWindow({ state }: { state: MealData }) {
                     xs={12}
                     md={6}
                 >
-                    <p>{state.strMealThumb}</p>
+                    <Box
+                        sx={{
+                            height: '100%',
+                            display: 'flex',
+                            alignItems: 'center'
+                        }}
+                    >
+
+                        <img
+                            src={state.strMealThumb}
+                            alt={state.strMeal}
+                            loading={'lazy'}
+                            style={{
+                                width: '90%',
+                                objectFit: 'contain'
+                            }}
+                        />
+                    </Box>
                 </ Grid>
                 <Grid
                     item
