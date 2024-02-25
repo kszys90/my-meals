@@ -1,9 +1,9 @@
 import React from 'react'
-import { Box, IconButton } from '@mui/material'
+import { Box, IconButton, Typography } from '@mui/material'
 import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
-import { HamburgerButton } from './HamburgerButton'
 import { NavSearch } from './NavSearch'
+import Logo from '../../imgs/_52acb34a-6182-465d-ae8c-c95e54c8d242.jpg'
 
 interface NavBarProps {
   siteMode: 'light' | 'dark'
@@ -13,14 +13,6 @@ interface NavBarProps {
 export const NavBar = (props: NavBarProps) => {
   const { siteMode, onIconClick } = props
 
-  const [hambMenu, setHambMenu] = React.useState<null | HTMLElement>(null)
-  const hambOpen = Boolean(hambMenu)
-  const handleHambClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setHambMenu(event.currentTarget)
-  }
-  const handleHambClose = () => {
-    setHambMenu(null)
-  }
   return (
     <Box
       sx={{
@@ -34,12 +26,39 @@ export const NavBar = (props: NavBarProps) => {
         boxShadow: 5
       }}
     >
-      <HamburgerButton
-        handleClose={handleHambClose}
-        onClick={handleHambClick}
-        open={hambOpen}
-        state={hambMenu}
-      />
+      <Box
+        sx={{
+          width: '100%',
+          height: '100%',
+          marginLeft: '20px',
+          display: 'flex',
+          alignItems: 'center',
+          flexDirection: 'row'
+        }}
+      >
+        <Box
+          sx={{
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center'
+          }}
+        >
+
+          <img
+            src={Logo}
+            alt={'logo'}
+            loading={'lazy'}
+            style={{
+              height: '90%',
+              objectFit: 'contain',
+              borderRadius: '50%'
+            }}
+          />
+        </Box>
+        <Typography sx={{ color: (theme) => theme.palette.primary.contrastText, fontWeight: 700, fontSize: 30, display: { xs: 'none', sm: 'block' }, marginLeft: '16px' }}>
+          MyMeals
+        </Typography>
+      </ Box>
       <Box
         sx={{
           display: 'flex',
