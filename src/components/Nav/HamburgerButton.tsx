@@ -42,6 +42,7 @@ export const HamburgerButton = ({ handleClose, onClick, open, state }: Hamburger
                 <MenuItem>
                     <NavLink
                         to={'/'}
+                        onClick={handleClose}
                     >
                         <Typography
                             sx={{
@@ -60,6 +61,7 @@ export const HamburgerButton = ({ handleClose, onClick, open, state }: Hamburger
                 <MenuItem>
                     <NavLink
                         to={'/search'}
+                        onClick={handleClose}
                     >
                         <Typography
                             sx={{

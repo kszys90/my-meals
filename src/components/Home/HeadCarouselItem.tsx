@@ -8,7 +8,7 @@ interface CarouselImage {
 
 interface CarouselItemProps {
   item: CarouselImage
-  onButtonClick: any
+  onButtonClick: () => void
 }
 
 export const HeadCarouselItem = (props: CarouselItemProps) => {

@@ -94,6 +94,7 @@ export const NavSearch = () => {
                     </Paper>
                     <NavLink
                         to={'/search'}
+                        onClick={handleClose}
                     >
                         <Typography
                             sx={{

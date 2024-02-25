@@ -68,18 +68,17 @@ export const HeadCarousel: React.FC<Props> = ({ refList }) => {
           }}
         >
           {
-            categories.sort(() => Math.random() - 0.5)
-              .map((element, index) => (
-                <SwiperSlide
+            categories.map((element, index) => (
+              <SwiperSlide
+                key={element.img}
+              >
+                <HeadCarouselItem
+                  item={element}
                   key={element.img}
-                >
-                  <HeadCarouselItem
-                    item={element}
-                    key={element.img}
-                    onButtonClick={refList && refList.current ? () => scrollToElement(refList.current[index]!) : null}
-                  />
-                </SwiperSlide>
-              ))
+                  onButtonClick={refList && refList.current ? () => scrollToElement(refList.current[index]!) : () => { }}
+                />
+              </SwiperSlide>
+            ))
           }
         </Swiper>
       </Box >
