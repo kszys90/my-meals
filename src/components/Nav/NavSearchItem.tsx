@@ -35,7 +35,8 @@ export const NavSearchItem = ({ data }: { data: MealData }) => {
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        flexDirection: 'column'
+                        flexDirection: 'column',
+                        padding: '16px'
                     }}
                 >
                     <img

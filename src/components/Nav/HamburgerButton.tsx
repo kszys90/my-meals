@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-indent-props */
 /* eslint-disable indent */
 import React from 'react'
-import { Button, Menu, MenuItem } from '@mui/material'
+import { Button, Menu, MenuItem, Typography } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import { NavLink } from 'react-router-dom'
 
@@ -41,18 +41,38 @@ export const HamburgerButton = ({ handleClose, onClick, open, state }: Hamburger
             >
                 <MenuItem>
                     <NavLink
-                        color={'inherit'}
                         to={'/'}
                     >
-                        Home
+                        <Typography
+                            sx={{
+                                color: (theme) => theme.palette.mode === 'dark' ? theme.palette.primary.contrastText : theme.palette.primary.dark,
+                                textDecoration: 'none',
+                                '&:hover': {
+                                    fontWeight: 700,
+                                    transform: 'scale(1.05)'
+                                }
+                            }}
+                        >
+                            Home
+                        </Typography>
                     </NavLink>
                 </MenuItem>
                 <MenuItem>
                     <NavLink
-                        color={'inherit'}
                         to={'/search'}
                     >
-                        Search
+                        <Typography
+                            sx={{
+                                color: (theme) => theme.palette.mode === 'dark' ? theme.palette.primary.contrastText : theme.palette.primary.dark,
+                                textDecoration: 'none',
+                                '&:hover': {
+                                    fontWeight: 700,
+                                    transform: 'scale(1.05)'
+                                }
+                            }}
+                        >
+                            Search
+                        </Typography>
                     </NavLink>
                 </MenuItem>
             </Menu>

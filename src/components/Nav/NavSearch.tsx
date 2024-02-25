@@ -2,12 +2,13 @@
 /* eslint-disable react/jsx-indent-props */
 /* eslint-disable indent */
 import React from 'react'
-import { Box, Button, CircularProgress, IconButton, InputBase, Link, Modal, Paper, Grid, Typography } from '@mui/material'
+import { Box, Button, CircularProgress, IconButton, InputBase, Modal, Paper, Grid, Typography } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import { getRecipesByName } from '../../api/getRecipesByName'
 import { useAsyncFn } from 'react-use'
 import { NavSearchItem } from './NavSearchItem'
 import { type MealData } from '../../types/types'
+import { NavLink } from 'react-router-dom'
 
 export const NavSearch = () => {
     const [open, setOpen] = React.useState(false)
@@ -79,7 +80,6 @@ export const NavSearch = () => {
                                 marginLeft: '8px',
                                 flex: 1,
                                 color: (theme) => theme.palette.primary.contrastText
-
                             }}
                             placeholder={'Search by meal name'}
                             inputProps={{ 'aria-label': 'Search by meal name' }}
@@ -92,16 +92,23 @@ export const NavSearch = () => {
                             <SearchIcon />
                         </IconButton>
                     </Paper>
-                    <Link
-                        underline={'hover'}
-                        href={'/search'}
-                        sx={{
-                            color: (theme) => theme.palette.mode === 'dark' ? theme.palette.primary.contrastText : theme.palette.primary.dark,
-                            marginBottom: '20px'
-                        }}
+                    <NavLink
+                        to={'/search'}
                     >
-                        Go to Advanced Search Options
-                    </Link>
+                        <Typography
+                            sx={{
+                                color: (theme) => theme.palette.mode === 'dark' ? theme.palette.primary.contrastText : theme.palette.primary.dark,
+                                textDecoration: 'none',
+                                marginBottom: '20px',
+                                '&:hover': {
+                                    fontWeight: 700,
+                                    transform: 'scale(1.05)'
+                                }
+                            }}
+                        >
+                            Go to Advanced Search Options
+                        </Typography>
+                    </NavLink>
                     {isSearched === false
                         ? null :
                         state.loading ?
@@ -127,7 +134,7 @@ export const NavSearch = () => {
                                             ? (
                                                 <Grid
                                                     container
-                                                    spacing={2}
+                                                    spacing={0}
                                                 >
                                                     {state.value.meals.map((meal: MealData) => (
                                                         <NavSearchItem
