@@ -112,7 +112,10 @@ export const SecondaryCarouselItem = ({ meal }: { meal: MealData }) => {
                 <Box sx={{ flexGrow: 1, overflowY: 'auto' }}>
                   {state.value.meals
                     ? (
-                      <RecipeWindow state={state.value.meals[0]} />
+                      <RecipeWindow
+                        onClose={handleClose}
+                        state={state.value.meals[0]}
+                      />
                     )
                     : (
                       <Typography>

@@ -16,7 +16,7 @@
     }
 
     .swiper-button-prev:hover {
-        transform: scale(1.25)
+        transform: scale(1.1)
     }
 
 
@@ -33,7 +33,7 @@
     }
 
     .swiper-button-next:hover {
-        transform: scale(1.25)
+        transform: scale(1.1)
     }
 
 }

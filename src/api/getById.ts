@@ -8,7 +8,6 @@ export const getByID = (id: string) => {
             return r.json()
         })
         .then((data) => {
-            console.log(data)
             return data
         })
 }
