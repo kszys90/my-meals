@@ -1,15 +1,22 @@
 /* eslint-disable indent */
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Button, Modal, Typography } from '@mui/material'
 import React from 'react'
 import { getRandom } from '../../api/getRandom'
 import { useAsyncFn } from 'react-use'
 import CircularProgress from '@mui/material/CircularProgress'
+import RecipeWindow from './RecipeWindow'
 
 export const RandomMeal = () => {
   const [state, doFetch] = useAsyncFn(getRandom)
   React.useEffect(() => {
     doFetch('https://www.themealdb.com/api/json/v1/1/random.php')
   }, [doFetch])
+
+  const [open, setOpen] = React.useState(false)
+  const handleOpen = () => {
+    setOpen(true)
+  }
+  const handleClose = () => setOpen(false)
   return (
     <Box
       sx={{
@@ -116,6 +123,7 @@ export const RandomMeal = () => {
                   sx={{
                     boxShadow: 15
                   }}
+                  onClick={handleOpen}
                 >
                   Show more
                 </Button>
@@ -140,6 +148,36 @@ export const RandomMeal = () => {
                   }}
                 />
               </Box>
+              <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby={'modal-modal-title'}
+                aria-describedby={'modal-modal-description'}
+              >
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: { xs: '100%', md: '80%' },
+                    height: { xs: '90%', md: '80%' },
+                    bgcolor: 'background.paper',
+                    boxShadow: 24,
+                    p: { xs: '16px', md: '32px' },
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center'
+                  }}
+                >
+                  <Box sx={{ flexGrow: 1, overflowY: 'auto' }}>
+                    <RecipeWindow
+                      onClose={handleClose}
+                      state={state.value.meals[0]}
+                    />
+                  </Box>
+                </Box>
+              </Modal>
             </>
       }
     </Box >

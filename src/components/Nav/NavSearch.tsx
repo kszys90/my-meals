@@ -127,7 +127,7 @@ export const NavSearch = () => {
                                                     {state.value.meals.map((meal: MealData) => (
                                                         <NavSearchItem
                                                             key={meal.idMeal}
-                                                            data={meal}
+                                                            state={meal}
                                                         />
                                                     ))}
                                                 </Grid>
