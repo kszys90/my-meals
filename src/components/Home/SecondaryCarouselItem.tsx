@@ -6,7 +6,7 @@ import React from 'react'
 import { MealData } from './SecondaryCarousel'
 import { getByID } from '../../api/getById'
 import { useAsyncFn } from 'react-use'
-import RecipeWindow from './RecipeWindow'
+import RecipeWindow from '../Other/RecipeWindow'
 
 export const SecondaryCarouselItem = ({ meal }: { meal: MealData }) => {
   function truncate(str: string, maxLength: number) {

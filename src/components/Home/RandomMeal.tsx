@@ -4,7 +4,7 @@ import React from 'react'
 import { getRandom } from '../../api/getRandom'
 import { useAsyncFn } from 'react-use'
 import CircularProgress from '@mui/material/CircularProgress'
-import RecipeWindow from './RecipeWindow'
+import RecipeWindow from '../Other/RecipeWindow'
 
 export const RandomMeal = () => {
   const [state, doFetch] = useAsyncFn(getRandom)

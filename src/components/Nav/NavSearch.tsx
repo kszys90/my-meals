@@ -17,13 +17,14 @@ export const NavSearch = () => {
 
     const [state, doFetch] = useAsyncFn(getRecipesByName)
     const [searchVal, setSearchVal] = React.useState<string>('')
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement> | React.MouseEvent) => {
         if (searchVal !== '') {
             event.preventDefault()
             doFetch(searchVal)
             setIsSearched(true)
         }
     }
+
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchVal(event.target.value)
     }
@@ -90,6 +91,7 @@ export const NavSearch = () => {
                         />
                         <IconButton
                             type={'button'}
+                            onClick={handleSubmit}
                             sx={{ padding: '10px', color: (theme) => theme.palette.primary.contrastText }}
                             aria-label={'search'}
                         >

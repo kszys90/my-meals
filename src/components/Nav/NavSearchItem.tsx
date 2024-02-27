@@ -4,7 +4,7 @@
 import React from 'react'
 import { type MealData } from '../../types/types'
 import { Box, Grid, Modal, Typography } from '@mui/material'
-import RecipeWindow from '../Home/RecipeWindow'
+import RecipeWindow from '../Other/RecipeWindow'
 
 export const NavSearchItem = ({ state }: { state: MealData }) => {
     const [open, setOpen] = React.useState(false)

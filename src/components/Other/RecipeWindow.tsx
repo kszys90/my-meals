@@ -145,7 +145,7 @@ export default function RecipeWindow({ state, onClose }: { state: MealData, onCl
                 <Grid
                     item
                     xs={12}
-                    md={4}
+                    sm={4}
                 >
                     <Box
                         sx={{
@@ -180,7 +180,7 @@ export default function RecipeWindow({ state, onClose }: { state: MealData, onCl
                 <Grid
                     item
                     xs={12}
-                    md={8}
+                    sm={8}
                 >
                     <Typography
                         sx={{
